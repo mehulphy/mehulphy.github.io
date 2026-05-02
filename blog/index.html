@@ -1,0 +1,26 @@
+---
+layout: default
+title: Blog
+description: Thoughts on physics, education, learning, and building things.
+---
+
+<div class="blog-page">
+  <div class="container">
+
+    <h1 class="page-title">Blog</h1>
+
+    {% if site.posts.size > 0 %}
+    <div class="posts-list">
+      {% for post in site.posts %}
+      <div class="post-item">
+        <a class="post-item-title" href="{{ post.url }}">{{ post.title }}</a>
+        <span class="post-item-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+    <p class="no-posts">No posts yet — check back soon.</p>
+    {% endif %}
+
+  </div>
+</div>
