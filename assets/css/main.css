@@ -144,43 +144,38 @@ a:hover {
 /* ============================================================
    About / Home
    ============================================================ */
-.about-page { padding: 5rem 0 4rem; }
+.about-page { padding: 4rem 0; }
 
-.about-intro {
-  display: flex;
-  align-items: center;
-  gap: 1.75rem;
-  margin-bottom: 2.25rem;
+.about-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+  margin-bottom: 0;
 }
 
-.about-photo {
-  width: 76px;
-  height: 76px;
-  border-radius: 50%;
-  object-fit: cover;
-  flex-shrink: 0;
-  border: 2px solid var(--border);
-}
+.about-text { display: flex; flex-direction: column; }
 
 .about-name {
   font-size: 1.75rem;
   font-weight: 700;
   letter-spacing: -0.03em;
   line-height: 1.15;
+  margin-bottom: 0.3rem;
 }
 
 .about-tagline {
   color: var(--muted);
-  margin-top: 0.3rem;
   font-size: 0.95rem;
+  margin-bottom: 2rem;
 }
 
 .about-bio {
   font-size: 1rem;
   color: var(--text);
-  max-width: 60ch;
   line-height: 1.8;
-  margin-bottom: 2.25rem;
+  margin-bottom: 2rem;
+  flex: 1;
 }
 .about-bio p + p { margin-top: 1rem; }
 
@@ -202,6 +197,30 @@ a:hover {
   color: var(--text);
   border-color: var(--muted);
   text-decoration: none;
+}
+
+.about-image-wrap { position: relative; }
+
+.about-image {
+  width: 100%;
+  border-radius: var(--radius);
+  display: block;
+  border: 1px solid var(--border);
+}
+
+.about-image-caption {
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .about-hero {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .about-image-wrap { order: -1; }
 }
 
 /* ============================================================
@@ -552,7 +571,6 @@ a:hover {
    Responsive
    ============================================================ */
 @media (max-width: 480px) {
-  .about-intro    { flex-direction: column; align-items: flex-start; gap: 1rem; }
   .about-name     { font-size: 1.5rem; }
   .post-title     { font-size: 1.5rem; }
   .nav-links      { gap: 1rem; }

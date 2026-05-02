@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Work
-description: Mehul Desai's professional experience, education, and skills.
+description: Mehul Desai's professional experience, projects, education, and skills.
 ---
 
 <div class="work-page">
@@ -23,6 +23,20 @@ description: Mehul Desai's professional experience, education, and skills.
           <h3>{{ job.title }}</h3>
           <p class="timeline-company">{{ job.company }} &middot; {{ job.location }}</p>
           <p class="timeline-desc">{{ job.description }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <p class="section-label">Projects</p>
+    <div class="timeline">
+      {% for project in site.data.projects %}
+      <div class="timeline-item">
+        <div class="timeline-period">{{ project.period }}</div>
+        <div class="timeline-content">
+          <h3>{% if project.url %}<a href="{{ project.url }}" target="_blank" rel="noopener">{{ project.name }}</a>{% else %}{{ project.name }}{% endif %}</h3>
+          <p class="timeline-company">{{ project.org }}</p>
+          <p class="timeline-desc">{{ project.description }}</p>
         </div>
       </div>
       {% endfor %}
