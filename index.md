@@ -13,7 +13,7 @@ description: Mehul Desai — physicist, educator, and learning designer based in
 
         <div class="about-bio">
           <p>With over 20 years in science education and a foundation in physics, I design learning experiences that make complex ideas accessible and engaging. I've led the development of five inquiry-based science programs and a comprehensive K–12 computer science curriculum, reaching thousands of teachers and students across India and internationally.</p>
-          <p>Currently I'm Chief Learning Officer at <a href="https://qubitscs.com" target="_blank" rel="noopener">Qbits Learning</a>, building a futuristic CS curriculum aligned to ISTE and CSTA standards. Previously I was CLO at <a href="https://www.yardstickedu.com" target="_blank" rel="noopener">Yardstick Educational Initiatives</a>, creating inquiry-based science programs for NGSS, Cambridge, and Australian curricula.</p>
+          <p>Currently I'm Chief Learning Officer at <a href="https://qubitsedu.com" target="_blank" rel="noopener">Qbits Learning</a>, building a futuristic CS curriculum aligned to ISTE and CSTA standards. Previously I was CLO at <a href="https://www.yardstickedu.com" target="_blank" rel="noopener">Yardstick Educational Initiatives</a>, creating inquiry-based science programs for NGSS, Cambridge, and Australian curricula.</p>
           <p>When I'm not thinking about learning, I'm playing the flute, writing poetry, or looking up at the stars.</p>
         </div>
 
