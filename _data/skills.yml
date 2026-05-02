@@ -1,18 +1,21 @@
 technical:
-  - Python
-  - Git / GitHub / GitLab
-  - HTML / CSS
-  - Linux / macOS
-  - Jekyll
+  - "Block-based coding: ScratchJr, Scratch, MakeCode"
+  - "Programming: Python, JavaScript, HTML/CSS, Java, Fortran"
+  - "Data Science: NumPy, Pandas, Matplotlib, Plotly"
+  - "OS: Linux, macOS, Windows"
+  - "Tools: Git, GitHub, GitLab, ClickUp, Todoist"
 
 domain:
-  - Curriculum design & development
-  - Inquiry-based learning (NGSS, CIE, CBSE)
+  - Curriculum design & development (K–12)
+  - Inquiry-based learning (NGSS, CIE, CBSE, CISCE)
+  - K–12 computer science curriculum (ISTE, CSTA aligned)
   - Teacher professional development
-  - Product development
-  - Program operations & scaling
+  - Instructional design & cognitive science
+  - Product development & program operations
 
 other:
+  - "Creator, YouTube channel: Intellectual Rigour"
   - "Member, Amateur Astronomers Association of Vadodara (2003–2010)"
   - "Evaluator, Gujarat HSE Board Physics Practical Exams (2006, 2008)"
   - "Volunteer, Vigyan Rail — Science on Wheels"
+  - "Short-term project, Astronomy & Astrophysics Division, Physical Research Laboratory, Ahmedabad (2004)"
