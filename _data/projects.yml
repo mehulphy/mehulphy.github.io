@@ -1,3 +1,15 @@
+- name: Intellectual Rigour
+  org: Personal Project
+  period: Ongoing
+  url: https://www.intellectualrigour.org
+  youtube: https://www.youtube.com/@IntellectualRigour
+  description: >-
+    A biographical interview series with renowned mathematicians, physicists,
+    and computer scientists — exploring their lives, ideas, and journeys.
+    Published as long-form articles on the website and as video interviews
+    on YouTube. Guests include Abhay Ashtekar, Andrew Strominger, Atish
+    Dabholkar, Rajesh Gopakumar, Sujatha Ramdorai, and others.
+
 - name: Qubits CS
   org: Qbits Education Pvt. Ltd.
   period: September 2021 – Present

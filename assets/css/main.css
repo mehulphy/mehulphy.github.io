@@ -215,6 +215,55 @@ a:hover {
   text-align: center;
 }
 
+/* Intellectual Rigour callout */
+.ir-card {
+  margin-top: 2.5rem;
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.ir-card-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.4rem;
+}
+
+.ir-card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.5rem;
+}
+
+.ir-card-desc {
+  font-size: 0.875rem;
+  color: var(--muted);
+  line-height: 1.65;
+  margin-bottom: 1rem;
+}
+
+/* Project YouTube link */
+.project-link {
+  display: inline-block;
+  margin-top: 0.4rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.2rem 0.55rem;
+  transition: color 0.12s, border-color 0.12s;
+}
+.project-link:hover {
+  color: var(--text);
+  border-color: var(--muted);
+  text-decoration: none;
+}
+
 @media (max-width: 640px) {
   .about-hero {
     grid-template-columns: 1fr;

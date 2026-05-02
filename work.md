@@ -37,6 +37,7 @@ description: Mehul Desai's professional experience, projects, education, and ski
           <h3>{% if project.url %}<a href="{{ project.url }}" target="_blank" rel="noopener">{{ project.name }}</a>{% else %}{{ project.name }}{% endif %}</h3>
           <p class="timeline-company">{{ project.org }}</p>
           <p class="timeline-desc">{{ project.description }}</p>
+          {% if project.youtube %}<a class="project-link" href="{{ project.youtube }}" target="_blank" rel="noopener">YouTube &rarr;</a>{% endif %}
         </div>
       </div>
       {% endfor %}
