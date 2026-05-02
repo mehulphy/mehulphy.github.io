@@ -1,16 +1,32 @@
 ---
 layout: default
-title: Work
-description: Mehul Desai's professional experience, projects, education, and skills.
+title: Contributions
+description: Mehul Desai's projects, professional experience, education, skills, and trainings.
+permalink: /contributions/
 ---
 
 <div class="work-page">
   <div class="container">
 
-    <h1 class="page-title">Work</h1>
+    <h1 class="page-title">Contributions</h1>
     <p style="margin-bottom: 3rem;">
       <a class="social-link" href="/Mehul_Desai_Resume.pdf" target="_blank" rel="noopener">Download CV (PDF)</a>
     </p>
+
+    <p class="section-label">Projects &amp; Programs</p>
+    <div class="timeline">
+      {% for project in site.data.projects %}
+      <div class="timeline-item">
+        <div class="timeline-period">{{ project.period }}</div>
+        <div class="timeline-content">
+          <h3>{% if project.url %}<a href="{{ project.url }}" target="_blank" rel="noopener">{{ project.name }}</a>{% else %}{{ project.name }}{% endif %}</h3>
+          <p class="timeline-company">{{ project.org }}</p>
+          <p class="timeline-desc">{{ project.description }}</p>
+          {% if project.youtube %}<a class="project-link" href="{{ project.youtube }}" target="_blank" rel="noopener">YouTube &rarr;</a>{% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
 
     <p class="section-label">Experience</p>
     <div class="timeline">
@@ -28,21 +44,6 @@ description: Mehul Desai's professional experience, projects, education, and ski
       {% endfor %}
     </div>
 
-    <p class="section-label">Projects</p>
-    <div class="timeline">
-      {% for project in site.data.projects %}
-      <div class="timeline-item">
-        <div class="timeline-period">{{ project.period }}</div>
-        <div class="timeline-content">
-          <h3>{% if project.url %}<a href="{{ project.url }}" target="_blank" rel="noopener">{{ project.name }}</a>{% else %}{{ project.name }}{% endif %}</h3>
-          <p class="timeline-company">{{ project.org }}</p>
-          <p class="timeline-desc">{{ project.description }}</p>
-          {% if project.youtube %}<a class="project-link" href="{{ project.youtube }}" target="_blank" rel="noopener">YouTube &rarr;</a>{% endif %}
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-
     <p class="section-label">Education</p>
     <div class="education-list">
       {% for edu in site.data.education %}
@@ -51,6 +52,7 @@ description: Mehul Desai's professional experience, projects, education, and ski
         <div class="education-content">
           <h3>{{ edu.degree }}</h3>
           <p class="education-meta">{{ edu.institution }} &middot; {{ edu.field }}</p>
+          {% if edu.note %}<p class="education-note">{{ edu.note }}</p>{% endif %}
         </div>
       </div>
       {% endfor %}
@@ -67,6 +69,24 @@ description: Mehul Desai's professional experience, projects, education, and ski
       <li>{{ skill }}</li>
       {% endfor %}
     </ul>
+
+    <p class="section-label">Trainings Conducted</p>
+    {% for group in site.data.trainings %}
+    <div class="training-group">
+      <div class="training-group-header">
+        <span class="training-year">{{ group.period }}</span>
+        {% if group.context %}<span class="training-context">{{ group.context }}</span>{% endif %}
+      </div>
+      <ul class="training-list">
+        {% for event in group.events %}
+        <li class="training-event">
+          <span class="training-school">{{ event.school }}</span>
+          <span class="training-meta">{{ event.location }}{% if event.date %} &middot; {{ event.date }}{% endif %}</span>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endfor %}
 
     <p class="section-label">Other</p>
     <ul class="other-list">
