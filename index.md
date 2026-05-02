@@ -17,14 +17,6 @@ description: Mehul Desai — physicist, educator, and learning designer based in
           <p>When I'm not thinking about learning, I'm playing the flute, writing poetry, or looking up at the stars.</p>
         </div>
 
-        <div class="social-links">
-          <a class="social-link" href="https://linkedin.com/in/{{ site.author.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>
-          <a class="social-link" href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener">GitHub</a>
-          <a class="social-link" href="https://gitlab.com/{{ site.author.gitlab }}" target="_blank" rel="noopener">GitLab</a>
-          <a class="social-link" href="https://twitter.com/{{ site.author.twitter }}" target="_blank" rel="noopener">Twitter</a>
-          <a class="social-link" href="mailto:{{ site.author.email }}">Email</a>
-        </div>
-
         <div class="ir-card">
           <p class="ir-card-label">Also</p>
           <h2 class="ir-card-title">Intellectual Rigour</h2>
