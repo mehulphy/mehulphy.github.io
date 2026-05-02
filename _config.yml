@@ -1,0 +1,37 @@
+title: Mehul Desai
+tagline: Physicist. Educator. Builder.
+description: >-
+  Mehul Desai is a physics educator and learning designer building
+  experiential science programs for children across India and the world.
+url: "https://mehulphy.github.io"
+baseurl: ""
+
+author:
+  name: Mehul Desai
+  email: quantumehul@gmail.com
+  linkedin: mehulphy
+  github: mehulphy
+  gitlab: mehulphy
+  twitter: mehulphy
+
+permalink: /blog/:year/:month/:day/:title/
+
+plugins:
+  - jekyll-feed
+
+feed:
+  path: feed.xml
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - .DS_Store
+  - README.md
+  - vendor/

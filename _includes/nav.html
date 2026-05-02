@@ -1,0 +1,14 @@
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="/">{{ site.title }}</a>
+    <div class="nav-links">
+      <a class="nav-link{% if page.url == '/' %} active{% endif %}" href="/">About</a>
+      <a class="nav-link{% if page.url contains '/work' %} active{% endif %}" href="/work">Work</a>
+      <a class="nav-link{% if page.url contains '/blog' %} active{% endif %}" href="/blog">Blog</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <span class="icon-sun">&#9788;</span>
+        <span class="icon-moon">&#9790;</span>
+      </button>
+    </div>
+  </div>
+</nav>
