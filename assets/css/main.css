@@ -11,7 +11,7 @@
   --accent:       #1E4080;
   --accent-hover: #163168;
   --radius:       4px;
-  --width:        740px;
+  --width:        960px;
   --nav-h:        56px;
   --font-ui:      'Lato', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-prose:   Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
@@ -272,6 +272,37 @@ a:hover {
   .about-image-wrap { order: -1; }
 }
 
+/* Profile Snapshot */
+.about-snapshot {
+  margin-top: 3.5rem;
+  padding-top: 0;
+}
+
+.snapshot-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-bottom: 2rem;
+}
+
+.snapshot-list li {
+  font-family: var(--font-prose);
+  font-size: 0.9375rem;
+  color: var(--text);
+  line-height: 1.75;
+  padding-left: 1.25rem;
+  position: relative;
+}
+
+.snapshot-list li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-family: var(--font-ui);
+}
+
 /* ============================================================
    Work
    ============================================================ */
@@ -484,6 +515,67 @@ a:hover {
   position: absolute;
   left: 0;
   color: var(--border);
+}
+
+/* Trainings */
+.training-group {
+  margin-bottom: 2.5rem;
+}
+
+.training-group-header {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 0.85rem;
+}
+
+.training-year {
+  font-family: var(--font-ui);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.training-context {
+  font-family: var(--font-ui);
+  font-size: 0.775rem;
+  color: var(--muted);
+}
+
+.training-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.training-event {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.training-school {
+  font-family: var(--font-ui);
+  font-size: 0.8125rem;
+  color: var(--text);
+  font-weight: 400;
+}
+
+.training-meta {
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  color: var(--muted);
+  font-weight: 300;
+}
+
+/* education note */
+.education-note {
+  font-family: var(--font-prose);
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: 0.3rem;
+  font-style: italic;
 }
 
 /* ============================================================
