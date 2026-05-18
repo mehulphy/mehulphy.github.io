@@ -3,6 +3,23 @@ layout: default
 ---
 <article class="post-page">
   <header class="post-header container">
+    {% if page.lang_ref %}
+      {% assign alt_post = nil %}
+      {% for p in site.posts %}
+        {% if p.lang_ref == page.lang_ref and p.lang != page.lang %}
+          {% assign alt_post = p %}
+        {% endif %}
+      {% endfor %}
+      {% if alt_post %}
+        <div class="post-lang-switch">
+          {% if page.lang == 'en' %}
+            <a href="{{ alt_post.url }}">Read in Gujarati</a>
+          {% else %}
+            <a href="{{ alt_post.url }}">Read in English</a>
+          {% endif %}
+        </div>
+      {% endif %}
+    {% endif %}
     <div class="post-meta">
       <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
       {% for cat in page.categories %}

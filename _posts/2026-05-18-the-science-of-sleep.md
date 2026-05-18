@@ -4,6 +4,8 @@ title: "The Science of Sleep: What Happens When You Close Your Eyes"
 description: "An accessible guide to sleep stages, their biological purpose, and why every hour matters."
 date: 2026-05-18
 categories: [health, science]
+lang: en
+lang_ref: the-science-of-sleep
 ---
 
 *An accessible guide to sleep stages, their biological purpose, and why every hour matters*
