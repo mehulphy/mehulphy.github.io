@@ -2,20 +2,20 @@
    Tokens
    ============================================================ */
 :root {
-  --bg:           #F7F8FC;
-  --nav-bg:       rgba(247, 248, 252, 0.93);
-  --surface:      #ECEEF6;
-  --text:         #18191F;
-  --muted:        #6C7485;
+  --bg:           #FFFFFF;
+  --nav-bg:       rgba(255, 255, 255, 0.93);
+  --surface:      #F3F4F8;
+  --text:         #000000;
+  --muted:        #4A4F5C;
   --border:       #D4D7E4;
   --accent:       #1E4080;
   --accent-hover: #163168;
   --radius:       4px;
   --width:        960px;
-  --nav-h:        56px;
-  --font-ui:      'Lato', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-prose:   Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
-  --font-display: 'Cormorant Garamond', 'Palatino Linotype', Georgia, serif;
+  --nav-h:        64px;
+  --font-ui:      'IBM Plex Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-prose:   'IBM Plex Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-display: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 [data-theme="dark"] {
@@ -99,13 +99,28 @@ a:hover {
 }
 
 .nav-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  line-height: 1;
+}
+.nav-brand-name {
   font-family: var(--font-display);
-  font-weight: 400;
-  font-size: 1.1rem;
+  font-weight: 500;
+  font-size: 1.2rem;
   color: var(--text);
   letter-spacing: 0.03em;
 }
-.nav-brand:hover { color: var(--accent); text-decoration: none; }
+.nav-brand-tagline {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--text);
+}
+.nav-brand:hover .nav-brand-name { color: var(--accent); }
+.nav-brand:hover { text-decoration: none; }
 
 .nav-links {
   display: flex;
