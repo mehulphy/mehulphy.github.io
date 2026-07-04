@@ -8,8 +8,6 @@ description: Mehul Desai — physicist, educator, and learning designer based in
 
     <div class="home-hero">
       <div class="home-hero-text">
-        <h1 class="home-name">Mehul Desai</h1>
-        <p class="home-tagline">Physicist &middot; Educator &middot; Learning Designer</p>
         <p class="home-intro">With over 20 years in science education, I design learning experiences that make complex ideas accessible and enduring. I am currently Chief Learning Officer at <a href="https://qubitsedu.com" target="_blank" rel="noopener">Qbits Learning</a> and the creator of <a href="https://intellectualrigour.org" target="_blank" rel="noopener">Intellectual Rigour</a> — a biographical interview series with leading mathematicians, physicists, and computer scientists.</p>
         <a class="home-about-link" href="/about/">About Me &rarr;</a>
       </div>
