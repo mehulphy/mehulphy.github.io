@@ -10,9 +10,6 @@ permalink: /about/
 
     <div class="about-hero">
       <div class="about-text">
-        <h1 class="about-name">Mehul Desai</h1>
-        <p class="about-tagline">Learn. Educate. Enlighten.</p>
-
         <div class="about-bio">
           <p>With over 20 years in science education and a foundation in physics, I design learning experiences that make complex ideas accessible and engaging. I have spearheaded the development of five inquiry-based science and computer science curricula — reaching thousands of teachers and students across India and internationally.</p>
           <p>Currently I'm Chief Learning Officer at <a href="https://qubitsedu.com" target="_blank" rel="noopener">Qbits Learning</a>, building a futuristic K–12 computer science curriculum aligned to ISTE and CSTA standards. Previously as CLO at <a href="https://www.yardstickedu.com" target="_blank" rel="noopener">Yardstick Educational Initiatives</a>, I led curriculum design for science, mathematics, and computer science aligned to the British National Curriculum, Cambridge International Examinations, NGSS, and Australian curricula.</p>
