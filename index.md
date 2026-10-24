@@ -1,39 +1,28 @@
 ---
 layout: default
-description: Mehul Desai — physicist, educator, and learning designer based in Gandhinagar, India.
+redirect_from:
+  - /blog/
 ---
 
-<div class="home-page">
-  <div class="container">
+<p class="intro-line muted">Writing on physics, science, education, and learning by <a href="/about/">{{ site.author.name }}</a>.</p>
 
-    <div class="home-hero">
-      <div class="home-hero-text">
-        <p class="home-intro">With over 20 years in science education, I design learning experiences that make complex ideas accessible and enduring. I am currently Chief Learning Officer at <a href="https://qubitsedu.com" target="_blank" rel="noopener">Qbits Learning</a> and the creator of <a href="https://intellectualrigour.org" target="_blank" rel="noopener">Intellectual Rigour</a> — a biographical interview series with leading mathematicians, physicists, and computer scientists.</p>
-        <a class="home-about-link" href="/about/">About Me &rarr;</a>
+{% assign posts = site.posts | where_exp: "p", "p.lang != 'gu'" %}
+{% if posts.size > 0 %}
+  {% assign years = posts | group_by_exp: "p", "p.date | date: '%Y'" %}
+  {% for year in years %}
+  <h2 class="year">{{ year.name }}</h2>
+  <ul class="post-list">
+    {% for post in year.items %}
+    <li>
+      <div>
+        <a href="{{ post.url }}">{{ post.title }}</a>
+        {% if post.description %}<p class="post-list-desc">{{ post.description }}</p>{% endif %}
       </div>
-
-      <div class="home-hero-image">
-        <img src="/assets/img/mehul_at_ias.jpg" alt="Mehul Desai at the Institute for Advanced Study, Princeton">
-        <p class="home-image-caption">Institute for Advanced Study, Princeton</p>
-      </div>
-    </div>
-
-    {% assign recent_posts = site.posts | where_exp: "p", "p.lang != 'gu'" %}
-    {% assign recent = recent_posts | first %}
-    {% if recent %}
-    <div class="home-latest">
-      <p class="section-label">Latest Writing</p>
-      <a class="home-article-card" href="{{ recent.url }}">
-        <div class="home-article-meta">
-          <time>{{ recent.date | date: "%B %-d, %Y" }}</time>
-          {% for cat in recent.categories %}<span class="post-category">{{ cat }}</span>{% endfor %}
-        </div>
-        <h2 class="home-article-title">{{ recent.title }}</h2>
-        {% if recent.description %}<p class="home-article-desc">{{ recent.description }}</p>{% endif %}
-        <span class="home-article-read">Read &rarr;</span>
-      </a>
-    </div>
-    {% endif %}
-
-  </div>
-</div>
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d" }}</time>
+    </li>
+    {% endfor %}
+  </ul>
+  {% endfor %}
+{% else %}
+  <p class="muted">No posts yet.</p>
+{% endif %}

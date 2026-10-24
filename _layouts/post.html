@@ -1,37 +1,22 @@
 ---
 layout: default
 ---
-<article class="post-page">
-  <header class="post-header container">
-    {% if page.lang_ref %}
-      {% assign alt_post = nil %}
-      {% for p in site.posts %}
-        {% if p.lang_ref == page.lang_ref and p.lang != page.lang %}
-          {% assign alt_post = p %}
-        {% endif %}
-      {% endfor %}
-      {% if alt_post %}
-        <div class="post-lang-switch">
-          {% if page.lang == 'en' %}
-            <a href="{{ alt_post.url }}">Read in Gujarati</a>
-          {% else %}
-            <a href="{{ alt_post.url }}">Read in English</a>
-          {% endif %}
-        </div>
-      {% endif %}
-    {% endif %}
+<article>
+  <header class="post-header">
     <div class="post-meta">
       <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
-      {% for cat in page.categories %}
-        <span class="post-category">{{ cat }}</span>
-      {% endfor %}
+      {% for cat in page.categories %}<span class="tag">{{ cat }}</span>{% endfor %}
     </div>
-    <h1 class="post-title">{{ page.title }}</h1>
-    {% if page.description %}
-      <p class="post-description">{{ page.description }}</p>
+    <h1 class="page-title">{{ page.title }}</h1>
+    {% if page.description %}<p class="post-description">{{ page.description }}</p>{% endif %}
+    {% if page.lang_ref %}
+      {% assign alt_post = site.posts | where: "lang_ref", page.lang_ref | where_exp: "p", "p.lang != page.lang" | first %}
+      {% if alt_post %}
+        <p class="post-lang"><a href="{{ alt_post.url }}">{% if page.lang == 'gu' %}Read in English{% else %}Read in Gujarati{% endif %}</a></p>
+      {% endif %}
     {% endif %}
   </header>
-  <div class="post-content container">
+  <div class="prose">
     {{ content }}
   </div>
 </article>

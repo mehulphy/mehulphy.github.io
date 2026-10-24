@@ -1,6 +1,19 @@
-# mehulphy.github.io
+# Quantum Reflections
 
-Personal portfolio and blog built with [Jekyll](https://jekyllrb.com/), hosted on [GitHub Pages](https://pages.github.com/). Push to `main` and the site deploys automatically — no CI pipeline needed.
+Mehul Desai's blog and CV — [mehulphy.github.io](https://mehulphy.github.io). Built with [Jekyll](https://jekyllrb.com/) and hosted on [GitHub Pages](https://pages.github.com/): push to `main` and the site rebuilds within about a minute.
+
+---
+
+## Pages
+
+| URL | Source | Contents |
+|---|---|---|
+| `/` | `index.md` | The blog — every English post, grouped by year |
+| `/about/` | `about.md` | Short bio and links |
+| `/cv/` | `cv.md` | Full CV, rendered from `_data/` |
+| `/blog/YYYY/MM/DD/slug/` | `_posts/` | Individual posts |
+
+Old URLs (`/blog/`, `/contributions/`, `/work/`) redirect via `jekyll-redirect-from`.
 
 ---
 
@@ -9,190 +22,83 @@ Personal portfolio and blog built with [Jekyll](https://jekyllrb.com/), hosted o
 **Prerequisites:** Ruby 3.x and Bundler.
 
 ```bash
-# Install dependencies (first time only)
 bundle install
-
-# Start the dev server with live reload
 bundle exec jekyll serve --livereload
-
-# Open http://localhost:4000
+# open http://localhost:4000
 ```
 
-Changes to files rebuild the site automatically. The `_site/` directory is generated output — never edit it directly.
+`_site/` is generated output — never edit it directly. Restart the server after changing `_config.yml`.
 
 ---
 
-## Writing a blog post
+## Writing a post
 
-Create a file in `_posts/` named `YYYY-MM-DD-your-post-title.md`:
-
-```
-_posts/2026-05-10-learning-by-doing.md
-```
-
-Every post needs this front matter at the top:
+Create `_posts/YYYY-MM-DD-your-post-title.md`:
 
 ```yaml
 ---
-layout: post
 title: "Your Post Title"
-description: "A one-sentence summary shown in the post header and meta tags."
+description: "One sentence — shown under the title on the home page and in the post header."
 date: 2026-05-10
 categories: [education]
 ---
 
-Your content in markdown goes here.
+Your content in Markdown.
 ```
 
-- `title` — shown in the browser tab and post header
-- `description` — shown as a subtitle under the title; also used for SEO
-- `date` — must match the filename date; posts with future dates won't appear until that date
-- `categories` — optional list; shown as a tag on the post
+The `post` layout is applied automatically. Posts dated in the future don't appear until that date.
 
-Push to `main` and the post goes live within ~60 seconds.
+### Gujarati translations
 
-### Markdown quick reference
-
-```markdown
-## Heading 2
-### Heading 3
-
-**bold**, _italic_, `inline code`
-
-[Link text](https://example.com)
-
-![Alt text](/assets/img/your-image.jpg)
-
-> Blockquote
-
-- Bullet list
-- Item
-
-1. Numbered list
-2. Item
-
-    ```python
-    # fenced code block
-    print("hello")
-    ```
-```
-
----
-
-## Updating resume content
-
-All resume data lives in `_data/`. Edit the relevant YAML file and push — the site regenerates automatically.
-
-### Experience — `_data/experience.yml`
+Give both versions the same `lang_ref` and set `lang`:
 
 ```yaml
-- title: Job Title
-  company: Company Name
-  location: City, Country
-  period: Jan 2024 – Present
-  current: true        # shows a "Now" badge; omit or set false for past roles
-  description: >-
-    Your description here. The >- block style lets you write across
-    multiple lines without needing quotes.
+lang: en          # or gu
+lang_ref: the-science-of-sleep
 ```
 
-### Education — `_data/education.yml`
-
-```yaml
-- degree: Master of Science
-  institution: University Name
-  field: Subject — Specialization
-  period: 2003 – 2005
-```
-
-### Skills — `_data/skills.yml`
-
-```yaml
-technical:
-  - Python
-  - Git / GitHub
-
-domain:
-  - Curriculum design
-  - Teacher professional development
-
-other:
-  - "Volunteer, Some Organization (2010–2015)"
-```
+Each version then links to the other. Only English posts are listed on the home page.
 
 ---
 
-## Adding images
+## Updating the CV
 
-Put images in `assets/img/` and reference them in posts or pages:
+The CV page reads everything from `_data/`:
 
-```markdown
-![Description](/assets/img/your-image.jpg)
-```
+| File | Section |
+|---|---|
+| `experience.yml` | Experience |
+| `projects.yml` | Projects & Programs (`url` optional) |
+| `education.yml` | Education (`note` optional) |
+| `skills.yml` | `domain` → Expertise, `technical` → Technical skills (`"Label: items"` renders the label in bold), `other` → Other |
+| `trainings.yml` | Trainings conducted — one collapsible group per period |
 
-For the profile photo, replace `assets/img/profile.jpeg`.
-
----
-
-## Updating site-wide settings
-
-Edit `_config.yml` for the site title, description, author info, and social links. Restart `jekyll serve` after editing this file — it's the only file that doesn't hot-reload.
-
-```yaml
-title: Mehul Desai
-description: Your site description for SEO.
-
-author:
-  name: Mehul Desai
-  email: you@example.com
-  linkedin: your-handle
-  github: your-handle
-  twitter: your-handle
-```
+The summary bullets at the top are written directly in `cv.md`. Replace `Mehul_Desai_Resume.pdf` to update the downloadable PDF. Printing the CV page from a browser gives a clean, nav-free version with all training groups expanded.
 
 ---
 
-## Updating the CV PDF
+## Design
 
-Replace `Mehul_Desai_Resume.pdf` in the root of the repo. The Work page links to it at `/Mehul_Desai_Resume.pdf`.
+All styles live in `assets/css/main.css`. Colours are tokens at the top of the file:
+
+- Off-white background (`#FAF9F6`), charcoal text (`#2B2B2B`)
+- One pastel accent — powder blue (`#A7C7E7`) — used for link underlines, section rules, tags, and selection
+- Dark mode follows the visitor's system setting; there is no toggle and no JavaScript
 
 ---
 
-## File structure reference
+## File structure
 
 ```
-_config.yml          ← site-wide settings (restart server to apply)
-_data/
-  experience.yml     ← work history
-  education.yml      ← degrees
-  skills.yml         ← technical, domain, and other skills
-_layouts/
-  default.html       ← base HTML template
-  post.html          ← blog post template
-_includes/
-  nav.html           ← navigation bar
-  footer.html        ← footer
-_posts/              ← blog posts (YYYY-MM-DD-title.md)
-assets/
-  css/main.css       ← all styles (no Bootstrap)
-  js/main.js         ← dark/light mode toggle
-  img/               ← images
-index.md             ← About page (home)
-work.md              ← Work page (experience + CV)
-blog/index.html      ← Blog listing page
+_config.yml          site title, author, social links, plugins
+_data/               CV data (see above)
+_includes/           nav.html, footer.html
+_layouts/            default.html (base), post.html
+_posts/              blog posts
+assets/css/main.css  all styles
+assets/img/          favicon and images for posts
+index.md             home / blog listing
+about.md             about page
+cv.md                CV page
 Mehul_Desai_Resume.pdf
 ```
-
----
-
-## Deployment
-
-Push any branch changes to `main`:
-
-```bash
-git add .
-git commit -m "your message"
-git push
-```
-
-GitHub Pages picks up the push and rebuilds the site. Changes are live within about a minute.

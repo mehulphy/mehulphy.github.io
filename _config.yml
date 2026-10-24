@@ -1,8 +1,8 @@
-title: Mehul Desai
-tagline: Physicist. Educator. Builder.
+title: Quantum Reflections
+tagline: Physicist · Educator · Learning designer
 description: >-
-  Mehul Desai is a physics educator and learning designer building
-  experiential science programs for children across India and the world.
+  Quantum Reflections — writing by Mehul Desai on physics, science,
+  education, and learning.
 url: "https://mehulphy.github.io"
 baseurl: ""
 
@@ -20,6 +20,7 @@ permalink: /blog/:year/:month/:day/:title/
 
 plugins:
   - jekyll-feed
+  - jekyll-redirect-from
 
 feed:
   path: feed.xml
