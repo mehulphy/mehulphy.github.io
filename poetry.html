@@ -17,7 +17,7 @@ permalink: /poetry/
 
 {%- for group in groups %}
 <section class="poem-list">
-  {% if groups.size > 1 %}<h2 class="poem-group" lang="{{ group.name }}">{% if group.name == 'gu' %}ગુજરાતીમાં{% else %}In English{% endif %}</h2>{% endif %}
+  {% if groups.size > 1 %}<h2 class="poem-group" lang="{{ group.name }}">{% if group.name == 'gu' %}ગુજરાતીમાં{% elsif group.name == 'hi' %}हिंदी में{% else %}In English{% endif %}</h2>{% endif %}
   {%- for poem in group.items %}
   {%- assign first_line = poem.content | strip_html | strip | newline_to_br | split: "<br />" | first | strip %}
   <a class="poem-row" href="{{ poem.url }}" lang="{{ poem.lang }}">

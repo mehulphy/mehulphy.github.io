@@ -38,7 +38,7 @@ Edit `_data/youtube.yml` and paste the video link (either `youtube.com/watch?v=â
 
 ## Local development
 
-**Prerequisites:** Ruby 3.x and Bundler (`brew install ruby`).
+**Prerequisites:** Ruby 3.x and Bundler. The Ruby that comes with macOS (2.6) is too old; install a current one once with `brew install ruby` and follow the PATH instructions Homebrew prints.
 
 ```bash
 bundle install
@@ -50,32 +50,72 @@ bundle exec jekyll serve --livereload --unpublished # also show draft poems
 
 ---
 
-## Writing a post
+## Writing a post (a "reflection")
 
-Create `_posts/YYYY-MM-DD-your-post-title.md`:
+Every post is one Markdown file in the `_posts/` folder.
 
-```yaml
----
-title: "Your Post Title"
-description: "One sentence, shown under the title on the home page and as the article's subtitle."
-date: 2026-05-10
-categories: [pedagogy, physics]   # subjects; colours come from _data/tags.yml
-# Optional; each appears in the article's details bar when set:
-updated: 2026-05-20
-place: Gandhinagar
-series: How people learn
----
+### 1. Create the file
 
-Your content in Markdown.
+Name it with the date and a short title, all lowercase, words joined by hyphens:
+
+```
+_posts/2026-11-02-why-questions-matter.md
 ```
 
-Reading time and word count are calculated automatically. The first paragraph gets a drop cap; `>` blockquotes become pull quotes; Markdown footnotes (`[^1]`) are styled at the foot of the article.
+The date in the file name becomes the post's date and part of its web address (`/blog/2026/11/02/why-questions-matter/`). A post dated in the future does not appear until that day.
 
-To add a new subject, give it a label and one of the pastel colours (`p1` to `p7`) in `_data/tags.yml`.
+### 2. Add the header block, then write
+
+```markdown
+---
+title: "Why Questions Matter More Than Answers"
+description: "One sentence, shown under the title on the home page and on the post."
+categories: [pedagogy, reflections]
+---
+
+Your text starts here. Separate paragraphs with a blank line.
+
+## A section heading
+
+> A quote you want to stand out becomes a lavender pull quote.
+
+- a bullet
+- another bullet
+
+**bold**, *italic*, [a link](https://example.com)
+
+A footnote marker[^1] in the text.
+
+[^1]: The footnote text, shown at the end of the post.
+```
+
+Reading time and word count are calculated automatically, and the first paragraph gets a large drop cap.
+
+### Optional header lines
+
+| Line | What it does |
+|---|---|
+| `featured: true` | Shows the post under **Selected reflections** on the home page |
+| `place: Gandhinagar` | Shows "Written in Gandhinagar" in the post's details bar |
+| `series: How people learn` | Shows a series name in the details bar |
+| `updated: 2026-11-10` | Shows an "Updated" date in the details bar |
+| `lang: gu` and `lang_ref: some-name` | Gujarati version of a post (see below) |
+
+### Subjects and colours
+
+Subjects in `categories` get their pastel colour from `_data/tags.yml`. Already set up: physics, pedagogy, computer science, ai, curriculum, conversations, reflections, science, health, education. A new subject still works and gets a default colour; to choose its colour, add it to `_data/tags.yml` with a label and one of `p1` to `p7`.
+
+### Images
+
+Put the image in `assets/img/` and use `![Description of the image](/assets/img/your-image.jpg)` in the post. Remove location data from phone photos before adding them.
 
 ### Gujarati translations
 
-Give both versions the same `lang_ref` and set `lang: en` or `lang: gu`. Each version links to the other; only English posts are listed.
+Give the English and Gujarati files the same `lang_ref` and set `lang: en` in one and `lang: gu` in the other. Each version then links to the other; only the English version is listed on the home and Reflections pages.
+
+### 3. Preview, then publish
+
+Preview locally with `bundle exec jekyll serve --livereload` (see Local development) and open http://localhost:4000. Your newest post automatically becomes **Latest reflections** on the home page and appears on the Reflections page. Then publish it with the steps in **Publishing to GitHub** below.
 
 ---
 
@@ -86,7 +126,7 @@ Create `_poems/your-poem.md`. Write one line per line and separate stanzas with 
 ```markdown
 ---
 title: "We Were Scalars"
-lang: en              # en or gu; poems are grouped by language
+lang: en              # en, gu or hi; poems are grouped by language
 order: 1              # position in the list (lower comes first)
 written: "2003"       # optional: any text, shown under the title
 note: "Written for my teacher when I was in college."   # optional: shown after the poem
@@ -98,7 +138,7 @@ you made us vectors,
 In your classroom, the world came to life,
 ```
 
-Don't end lines with two spaces; a plain line break is enough. Poems are numbered with Roman numerals within each language. Gujarati text uses Noto Serif Gujarati.
+Don't end lines with two spaces; a plain line break is enough. Poems are numbered with Roman numerals within each language. Gujarati text uses Noto Serif Gujarati and Hindi text uses Noto Serif Devanagari.
 
 ---
 
@@ -106,9 +146,9 @@ Don't end lines with two spaces; a plain line break is enough. Poems are numbere
 
 | File | Section |
 |---|---|
-| `_data/cv.yml` | Summary, headline numbers, workshops intro |
+| `_data/cv.yml` | Opening line, summary, specialisations, profile snapshot, headline numbers, workshops intro |
 | `_data/experience.yml` | Experience |
-| `_data/education.yml` | Education (`note` optional) |
+| `_data/education.yml` | Education (`details` list optional) |
 | `_data/projects.yml` | Projects cards (`color` p1 to p7) |
 | `_data/community.yml` | Community |
 | `_data/trainings.yml` | Workshops delivered: the full log, grouped by year |
@@ -117,6 +157,75 @@ Don't end lines with two spaces; a plain line break is enough. Poems are numbere
 There is no downloadable PDF. Printing the CV page hides the header and footer.
 
 Your email is stored in `_config.yml` as `email_user` and `email_domain`, and `_includes/email-link.html` writes it into pages only in scrambled form; `assets/js/main.js` assembles the address when someone clicks an email link.
+
+---
+
+## Publishing to GitHub
+
+The live site is built by GitHub Pages from the `main` branch. Whenever you push to `main`, it rebuilds and goes live in about a minute. Run these commands in Terminal from the repo folder (`cd ~/my-repos/mehulphy.github.io`).
+
+### 1. See what changed
+
+```bash
+git status
+```
+
+Check the list before you commit. Files you have not changed should not appear, and private files must never appear (see the safety list below).
+
+### 2. Stage the files you want to publish
+
+Add only the files you mean to publish:
+
+```bash
+git add _posts/2026-11-02-why-questions-matter.md
+```
+
+or a whole folder, such as all posts:
+
+```bash
+git add _posts/
+```
+
+`git add -A` stages everything, which is convenient but easy to regret; run `git status` first if you use it.
+
+### 3. Commit with a short message
+
+```bash
+git commit -m "New reflection: Why questions matter"
+```
+
+### 4. Push
+
+```bash
+git push
+```
+
+### 5. Check the live site
+
+Open https://mehulphy.github.io after a minute or two. If you still see the old version, reload once with **Cmd+Shift+R**. To watch the build, open the repo on GitHub and look under **Actions** (or **Settings â†’ Pages**); a red cross there means the build failed, usually because of a typo in a header block.
+
+### If the push is rejected
+
+If `git push` says the remote has changes you don't have (for example, after editing a file on github.com), bring them in first and push again:
+
+```bash
+git pull --rebase
+git push
+```
+
+### Safety list: never publish these
+
+These files contain personal details (address, phone, date of birth) and are listed in `.gitignore` and in `exclude` in `_config.yml`, so git and the site skip them. Keep it that way:
+
+- `*.tex` (your LaTeX CV and resume)
+- `*.pdf` (exported CVs and resumes)
+- `*.zip` (design exports)
+
+If `git status` ever shows one of these as a change to commit, stop and remove it with `git restore --staged <file>`.
+
+### Writing rules for this site
+
+No em dashes or en dashes anywhere: use commas, colons or parentheses in sentences, "2023 to now" for year ranges, and a plain hyphen for day ranges ("20-21 May"). In a header block, put quotes around any value that contains a colon, for example `description: "Notes: on learning"`; an unquoted colon breaks the page's layout.
 
 ---
 
