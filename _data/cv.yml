@@ -1,8 +1,80 @@
-summary: >-
-  Educator with 20+ years in physics, inquiry-based science and K-12 computer
-  science education. Currently Chief Learning Officer at Qubits Learning,
-  building learning environments where students genuinely think and reason
-  like scientists.
+# Shown at the top of the CV page.
+lede: >-
+  An educator with over 20 years of experience in education, specialising in
+  physics and science education and, more recently, computer science
+  education. I am dedicated to building learning environments where students
+  genuinely think and reason like scientists.
+
+# The Summary section, one entry per paragraph.
+summary:
+  - >-
+    I began my career teaching Physics at the higher secondary level, and have
+    since carried out classroom-based studies of pedagogy, led curriculum
+    design for inquiry-based science and K-12 computer science programmes,
+    co-led learning programmes that reached thousands of students and teachers
+    across India, and contributed to state and national curriculum
+    development.
+  - >-
+    My practice is shaped by a sustained interest in how people learn: the role
+    of productive struggle, student questioning, and evidence-based reasoning
+    in building deep understanding. This same interest drives Intellectual
+    Rigour, a YouTube channel (est. 2024; 25,000+ subscribers) where I host
+    long-form conversations with leading scientists and mathematicians, though
+    it is in the classroom that these ideas are tested and put to work.
+
+specialisations:
+  - Physics
+  - Science (inquiry-based and experiential learning)
+  - Computer Science (K-12, AP Computer Science, AI)
+  - Curriculum design
+  - Teacher professional development
+  - Assessment
+
+snapshot:
+  - >-
+    Five years of classroom Physics teaching at the higher secondary level
+    (Std. 11 and 12), with 200+ students per year: planning curriculum,
+    designing assessments, conducting laboratory instruction, and building a
+    culture of inquiry and scientific reasoning.
+  - >-
+    Conducted an independent classroom-based study (Project Ramanujan,
+    2015-16) of mathematical thinking pedagogy using the
+    Concrete-Representational-Abstract (CRA) approach: designed the
+    intervention, taught the lessons directly, and evaluated outcomes through
+    pre- and post-diagnostic assessment and a perception survey.
+  - >-
+    Designed and implemented five inquiry-based science learning programmes
+    aligned to the British National Curriculum, Australian Curriculum,
+    Cambridge International Examinations (CIE), CBSE, and CISCE, with
+    reference to Next Generation Science Standards (NGSS).
+  - >-
+    Created a comprehensive K-12 computer science curriculum aligned to the
+    International Society for Technology in Education (ISTE) and Computer
+    Science Teachers Association (CSTA) standards, fostering digital literacy
+    and computational thinking.
+  - >-
+    Co-led professional development for 300+ teachers across 50+ schools in
+    eight states, covering inquiry-based learning, the nature of science,
+    mathematical thinking, effective school assessment, computer science
+    education, STEM education, and experiential learning.
+  - >-
+    Drove significant improvements in classroom instruction and practices for
+    foundational literacy and numeracy (FLN), scientific literacy, and
+    mathematical thinking in government schools across Gujarat, Karnataka,
+    Telangana, and Andhra Pradesh.
+  - >-
+    Used assessment and usage data from AssessEd to guide the machine learning
+    team in refining its algorithms, for a more personalised and effective
+    learning experience.
+  - >-
+    Created a question-tagging framework based on Bloom's taxonomy to
+    categorise questions, enabling insightful reports and personalised
+    learning paths; developed a knowledge map defining learning paths for
+    students facing difficulties in science and mathematics.
+  - >-
+    Ran community career-guidance seminars for an underserved, largely
+    uneducated pastoral community, through the Raika Education Charitable
+    Trust (RECT), helping students see realistic pathways after Grade 10.
 
 stats:
   - value: "20+"
@@ -15,5 +87,8 @@ stats:
     label: Intellectual Rigour subscribers
 
 workshops_intro: >-
-  Inquiry-based learning, STEM, experiential learning, nature of science and
-  classroom assessment: 300+ teachers across 50+ schools in eight states.
+  Professional development workshops on inquiry-based learning, STEM
+  education, experiential learning, the nature of science, and effective
+  classroom assessment for over 300 teachers across 50+ schools in eight
+  states between 2010 and 2022, covering national and international curricula
+  (CBSE, ICSE, Cambridge). The full log of sessions follows, most recent first.

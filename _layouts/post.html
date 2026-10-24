@@ -1,6 +1,6 @@
 ---
 layout: default
-section: writing
+section: reflections
 ---
 {%- if page.lang == 'gu' -%}
   {%- assign siblings = site.posts | where: "lang", "gu" -%}
@@ -18,7 +18,7 @@ section: writing
 {%- endfor -%}
 
 <div class="article-page">
-  <a class="back-link" href="/writing/">← all writing</a>
+  <a class="back-link" href="/reflections/">← all reflections</a>
 
   <header class="article-header">
     {% if page.categories.size > 0 %}<div class="pills">{% include tag-pills.html tags=page.categories link=true %}</div>{% endif %}

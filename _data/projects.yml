@@ -1,28 +1,153 @@
-# color is one of the pastel tokens p1 to p7; url is optional.
+# color is one of the pastel tokens p1 to p7.
 - name: Qubits CS
-  meta: 2021 to now · K-12 CS
+  org: Qbits Learning Pvt. Ltd.
+  period: Sep 2021 to now
   color: p3
-  url: https://qubitscs.com
+  description: >-
+    Leading the curriculum design of a future-focused K-12 computer science
+    curriculum aligned to international standards: International Society for
+    Technology in Education (ISTE) and Computer Science Teachers Association
+    (CSTA).
+
 - name: BeeCurious
-  meta: 2020 to 2023 · Inquiry science
+  org: Yardstick Educational Initiatives Pvt. Ltd.
+  period: Nov 2020 to Mar 2023
   color: p4
-  url: https://www.beecuriousedu.com
+  description: >-
+    Led the curriculum design of inquiry-based science modules developed for
+    NGSS, British National Curriculum, CIE, and Australian Curriculum, as well
+    as CBSE and ICSE. Developed a framework classifying activity types
+    (scientific exploration, experimentation, inquiry, and long-term data
+    logging), with a distinct template and approach for each.
+
 - name: Ek Kadam Aagal
-  meta: 2020 to now · GCERT
+  org: Central Square Foundation / GCERT, Gujarat
+  period: 2020 to now
   color: p5
-- name: DiscoverEd
-  meta: 2013 to 2017 · NGSS science
-  color: p2
-- name: Project Ramanujan
-  meta: 2015 to 2016 · Maths pedagogy
-  color: p1
-- name: AssessEd
-  meta: 2016 to 2019 · Remediation
+  description: >-
+    Led CSF's support for a statewide programme owned and run by GCERT and the
+    State Education Department to build problem-solving and critical-thinking
+    skills, with reference to PISA-style assessment. Curated, created, and
+    supplied sets of questions for state distribution every Wednesday, with
+    solutions broadcast the following week, alongside teacher guidance on
+    prompting students toward answers rather than supplying them directly.
+    Continues to run today.
+
+- name: Roost at Home
+  org: Central Square Foundation
+  period: May 2020
   color: p6
-- name: YELP
-  meta: 2010 to 2012 · Experiential
+  description: >-
+    Psychosocial support and socio-emotional learning for English-medium
+    schools across Gujarat during the COVID-19 school closures. Drove much of
+    CSF's backend support for this government-led initiative, owned and
+    implemented by GCERT: reached out to individuals and NGOs, sourced content,
+    and coordinated at-home learning and wellbeing activities distributed
+    statewide through GCERT's WhatsApp channels.
+
+- name: AssessEd
+  org: Digital Aristotle Pvt. Ltd.
+  period: May 2016 to Jul 2019
+  color: p1
+  description: >-
+    Developed a content framework for a revision and remediation system based
+    on the Revised Bloom's Taxonomy; mentored a team of 12 interns building the
+    base for an Intelligent Tutoring System for science and mathematics;
+    developed the entire training programme for implementing AssessEd in
+    schools; analysed student and assessment data to guide pedagogy; initiated
+    a new structure for assessment bank development.
+
+- name: Eureka 5.0
+  org: Thinklabs Technosolutions Pvt. Ltd. (Fitkids)
+  period: Aug 2017 to Apr 2019
+  color: p2
+  description: >-
+    Eureka (Active Science Learning) integrates the 5E learning methodology.
+    Contributed during the due diligence stage of Fitkids' acquisition of
+    Thinklabs, then laid out the content guidelines for reviving Eureka 4.0 as
+    Eureka 5.0, reviewed and created content, and mentored the trainers.
+    Single-handedly built an automated supply chain system from linked Google
+    Sheets that delivered over six lakh kits to 80+ schools across India.
+
+- name: DiscoverEd
+  org: Fitkids Education & Training Pvt. Ltd.
+  period: Jul 2013 to Apr 2017
   color: p7
-- name: ScienceLab
-  meta: 2012 to 2013 · Science kits
+  description: >-
+    An inquiry-based science learning programme aligned to NGSS, in which
+    students use Claim-Evidence-Reasoning to explain findings from
+    investigations and focus on doing science rather than passively learning
+    it. Conceptualised the programme from the ground up, designed its entire
+    operations, and co-led its implementation across five states.
+
+- name: Project Ramanujan
+  org: Fitkids Education & Training Pvt. Ltd.
+  period: Mar 2015 to Mar 2016
+  color: p1
+  description: >-
+    A classroom-based study of how to develop students' mathematical thinking.
+    Planned the intervention using the Concrete-Representational-Abstract
+    (CRA) approach, developed the lesson plans, and taught the lessons directly
+    at The King's School, Goa; designed pre- and post-diagnostic assessments
+    and a mathematics perception survey, then analysed and presented the
+    findings.
+
+- name: Project Chandrasekhar
+  org: Fitkids Education & Training Pvt. Ltd.
+  period: Jul 2013 to Jan 2014
   color: p3
-  url: http://nextsciencelab.in
+  description: >-
+    Evaluated robotics kits (LEGO Mindstorms, VEX, Fischertechnik) hands-on
+    for an integrated STEM curriculum, and developed the basic framework of the
+    STEM programme by trialling the prototype curriculum in-house. This work
+    led to DiscoverEd.
+
+- name: Project Feynman
+  org: Fitkids Education & Training Pvt. Ltd.
+  period: Jul 2013 to Jan 2014
+  color: p4
+  description: >-
+    Collaborated with the pedagogy teams of LAB-AIDS, STEMscopes (Rice
+    University), and Carolina to create an integrated STEM education programme
+    for Indian schools. This work contributed critical inputs to DiscoverEd.
+
+- name: ScienceLab
+  org: Next Education India Pvt. Ltd.
+  period: Oct 2012 to Jun 2013
+  color: p5
+  description: >-
+    A programme aligned to NCF-2005 that develops curiosity through
+    experiential science activities, with modular kits for ten hands-on
+    activities in each grade; now in 70+ schools in India. Created the entire
+    science kit and its content in eight months, from conceptualisation to
+    go-to-market.
+
+- name: Yardstick Experiential Learning Program (YELP)
+  org: Yardstick Educational Initiatives Pvt. Ltd.
+  period: May 2010 to Sep 2012
+  color: p6
+  description: >-
+    One of India's first hands-on science programmes, based on David Kolb's
+    Experiential Learning Cycle. Developed more than 200 Physics activities
+    and reviewed more than 200 Chemistry and Biology activities; developed the
+    teacher training programme and implemented it across 30+ schools.
+
+- name: School Excellence Programme
+  org: Yardstick Educational Initiatives Pvt. Ltd.
+  period: Jan 2011 to Apr 2012
+  color: p2
+  description: >-
+    Improving the quality of science education in government schools in the
+    Hyderabad region, benefiting around 2,000 students from low-income
+    families. Co-led the development, design, and training of a science
+    teaching programme using classroom demonstration activities.
+
+- name: Short-Term Project, General Astronomy
+  org: Astronomy & Astrophysics Division, Physical Research Laboratory, Ahmedabad
+  period: Nov 2004
+  color: p7
+  description: >-
+    Interacted with the faculty of the Astronomy & Astrophysics Division,
+    solved problems in general astronomy, and studied the research directions
+    pursued at the institute, under Prof. B.G. Anandarao, Chairman, A&A
+    Division.

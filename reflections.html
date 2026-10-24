@@ -1,18 +1,19 @@
 ---
 layout: default
-title: Writing
-section: writing
+title: Reflections
+section: reflections
 description: Everything on Quantum Reflections, by subject and year.
-permalink: /writing/
+permalink: /reflections/
 redirect_from:
   - /archive/
+  - /writing/
 ---
 {%- assign posts = site.posts | where_exp: "p", "p.lang != 'gu'" -%}
 {%- assign cats = "" | split: "" -%}
 {%- for p in posts -%}{%- assign cats = cats | concat: p.categories -%}{%- endfor -%}
 {%- assign cats = cats | uniq -%}
 
-<p class="eyebrow">Writing</p>
+<p class="eyebrow">Reflections</p>
 <h1 class="display-title">Everything, by subject &amp; year</h1>
 
 <div data-filterable>

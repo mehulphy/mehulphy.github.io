@@ -10,25 +10,25 @@ The design comes from a Claude Design mock-up ("Pastel minimalist Jekyll blog").
 
 | URL | Source | Contents |
 |---|---|---|
-| `/` | `index.html` | Home: welcome, Intellectual Rigour's latest interview, post cards (latest first) |
-| `/writing/` | `writing.html` | Subject cards, year filter, and a compact list of every post |
+| `/` | `index.html` | Home: welcome, Intellectual Rigour's latest interview, selected poetry, latest and selected reflections, disclaimer |
+| `/reflections/` | `reflections.html` | Reflections: subject cards, year filter, and a compact list of every post |
 | `/poetry/` | `poetry.html` | Poems from `_poems/`, newest first |
 | `/cv/` | `cv.html` | CV, rendered from `_data/` |
 | `/about/` | `about.html` | Short bio, motto, links |
 | `/blog/YYYY/MM/DD/slug/` | `_posts/` | Individual posts |
 | `/poetry/slug/` | `_poems/` | Individual poems |
 
-Old URLs (`/blog/`, `/archive/`, `/contributions/`, `/work/`) redirect via `jekyll-redirect-from`.
+Old URLs (`/blog/`, `/archive/`, `/writing/`, `/contributions/`, `/work/`) redirect via `jekyll-redirect-from`.
 
 ### Choosing what appears on the home page
 
-The home page always shows your newest post under **Latest**. To pick posts or poems for the **Selected writing** and **Selected poetry** sections, add this line to their front matter:
+The home page always shows your newest post under **Latest reflections**. To pick posts or poems for the **Selected reflections** and **Selected poetry** sections, add this line to their front matter:
 
 ```yaml
 featured: true
 ```
 
-Remove the line (or set it to `false`) to take something off the home page. A section is hidden when nothing in it is featured; the latest post is never repeated under Selected writing.
+Remove the line (or set it to `false`) to take something off the home page. A section is hidden when nothing in it is featured; the latest post is never repeated under Selected reflections.
 
 ### Latest interview on the home page
 
@@ -109,15 +109,15 @@ Don't end lines with two spaces; a plain line break is enough. Poems are numbere
 | `_data/cv.yml` | Summary, headline numbers, workshops intro |
 | `_data/experience.yml` | Experience |
 | `_data/education.yml` | Education (`note` optional) |
-| `_data/projects.yml` | Selected projects cards (`color` p1 to p7, `url` optional) |
+| `_data/projects.yml` | Projects cards (`color` p1 to p7) |
 | `_data/community.yml` | Community |
-| `_data/trainings.yml` | Workshops delivered: one chip per year, expands to the full log |
+| `_data/trainings.yml` | Workshops delivered: the full log, grouped by year |
 | `_data/skills.yml` | Skills |
 
-Replace `Mehul_Desai_Resume.pdf` to update the downloadable PDF. Printing the CV page hides the header and footer and expands every workshop log.
+Replace `Mehul_Desai_Resume.pdf` to update the downloadable PDF. Printing the CV page hides the header and footer.
 
 ---
 
 ## Design
 
-All styles live in `assets/css/main.css`; colour tokens are at the top. Type is Cormorant Garamond (display), Newsreader (body), and IBM Plex Mono (labels). The theme follows the visitor's system setting until they use the light/dark toggle, which is remembered. `assets/js/main.js` handles the toggle, the writing/archive filters, and the CV workshop chips; everything still renders without JavaScript.
+All styles live in `assets/css/main.css`; colour tokens are at the top. Type is Cormorant Garamond (display), Newsreader (body), and IBM Plex Mono (labels). The theme follows the visitor's system setting until they use the light/dark toggle, which is remembered. `assets/js/main.js` handles the toggle and the reflections filters; everything still renders without JavaScript.

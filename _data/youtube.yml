@@ -1,9 +1,5 @@
 # Intellectual Rigour, shown on the home page.
 channel: https://www.youtube.com/@IntellectualRigour
-blurb: >-
-  I run Intellectual Rigour, a YouTube channel of long-form conversations
-  with leading scientists and mathematicians about their lives, their
-  ideas, and the questions that keep them going.
 
 # The latest interview. Paste the full YouTube link (watch?v=… or youtu.be/…).
 # While this is empty, the home page shows a card linking to the channel.
@@ -11,3 +7,13 @@ latest:
   url: "https://youtu.be/U1zaZ-SCmvc"
   title: "On Discovering Pulsars"
   guest: "Jocelyn Bell Burnell"
+  # A few lines about the guest, shown next to the video.
+  about: >-
+    I had the privilege of interviewing Professor Dame Jocelyn Bell Burnell,
+    the astrophysicist who discovered pulsars. In 1967, as a PhD student at
+    Cambridge, she noticed a tiny, regular "bit of scruff" in her radio
+    telescope data. It turned out to be the first pulsar, a rapidly spinning
+    neutron star, and one of the great discoveries of twentieth-century
+    astronomy. She has since become one of science's most inspiring voices,
+    and in 2018 she gave her entire Breakthrough Prize to fund PhD
+    scholarships for students from under-represented groups in physics.

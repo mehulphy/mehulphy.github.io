@@ -1,7 +1,7 @@
 title: Quantum Reflections
 tagline: Learn · Educate · Enlighten
 description: >-
-  Quantum Reflections: writing by Mehul Desai on physics, science,
+  Quantum Reflections: reflections by Mehul Desai on physics, science,
   education, and learning.
 url: "https://mehulphy.github.io"
 baseurl: ""
@@ -49,5 +49,6 @@ exclude:
   - README.md
   - vendor/
   - "*.zip"
+  - "*.tex"
   - "We were scalars.md"
   - "મારી ગુજરાતી કૃતિઓ.md"

@@ -13,7 +13,7 @@ redirect_from:
     <div>
       <p class="eyebrow">Curriculum Vitae</p>
       <h1 class="display-title">{{ site.author.name }}</h1>
-      <p class="cv-lede">{{ site.data.cv.summary }}</p>
+      <p class="cv-lede">{{ site.data.cv.lede }}</p>
     </div>
     <div class="cv-actions">
       <a class="button-pill filled no-print" style="background:var(--p1)" href="/Mehul_Desai_Resume.pdf" target="_blank" rel="noopener">Download PDF ↓</a>
@@ -28,6 +28,30 @@ redirect_from:
   </section>
 
   <div class="cv-sections">
+    <section class="cv-section">
+      <h2>Summary</h2>
+      <div class="cv-prose">
+        {%- for para in site.data.cv.summary %}
+        <p>{{ para }}</p>
+        {%- endfor %}
+        <div class="cv-specialisations">
+          <span class="label">Specialisations</span>
+          {%- for s in site.data.cv.specialisations %}
+          <span class="pill" style="background:var(--p{{ forloop.index0 | modulo: 7 | plus: 1 }})">{{ s }}</span>
+          {%- endfor %}
+        </div>
+      </div>
+    </section>
+
+    <section class="cv-section">
+      <h2>Profile snapshot</h2>
+      <ul class="cv-snapshot">
+        {%- for item in site.data.cv.snapshot %}
+        <li>{{ item }}</li>
+        {%- endfor %}
+      </ul>
+    </section>
+
     <section class="cv-section">
       <h2>Experience</h2>
       <div class="cv-entries">
@@ -48,21 +72,24 @@ redirect_from:
         <div class="cv-entry">
           <span class="cv-entry-title">{{ edu.degree }}</span><span class="cv-entry-period">{{ edu.period }}</span>
           <span class="cv-entry-org">{{ edu.institution }}</span>
-          {% if edu.note %}<p class="cv-entry-desc">{{ edu.note }}</p>{% endif %}
+          {% if edu.details %}<ul class="cv-entry-details">{% for d in edu.details %}<li>{{ d }}</li>{% endfor %}</ul>{% endif %}
         </div>
         {%- endfor %}
       </div>
     </section>
 
     <section class="cv-section">
-      <h2>Selected projects</h2>
+      <h2>Projects</h2>
       <div class="project-cards">
         {%- for project in site.data.projects %}
-        {%- if project.url %}
-        <a class="project-card" href="{{ project.url }}" target="_blank" rel="noopener" style="background:var(--{{ project.color }})"><span class="project-card-name">{{ project.name }}</span><span class="project-card-meta">{{ project.meta }}</span></a>
-        {%- else %}
-        <div class="project-card" style="background:var(--{{ project.color }})"><span class="project-card-name">{{ project.name }}</span><span class="project-card-meta">{{ project.meta }}</span></div>
-        {%- endif %}
+        <div class="project-card" style="background:var(--{{ project.color }})">
+          <div class="project-card-head">
+            <span class="project-card-name">{% if project.url %}<a href="{{ project.url }}" target="_blank" rel="noopener">{{ project.name }}</a>{% else %}{{ project.name }}{% endif %}</span>
+            <span class="project-card-meta">{{ project.period }}</span>
+          </div>
+          <span class="project-card-org">{{ project.org }}</span>
+          <p class="project-card-desc">{{ project.description }}</p>
+        </div>
         {%- endfor %}
       </div>
     </section>
@@ -84,17 +111,15 @@ redirect_from:
       <h2>Workshops delivered</h2>
       <div class="workshops">
         <p>{{ site.data.cv.workshops_intro }}</p>
-        <div class="workshop-chips">
-          {%- for group in site.data.trainings %}
-          <button class="chip" type="button" aria-expanded="false" aria-controls="workshops-{{ group.year }}">{{ group.year }} · {{ group.events.size }} schools</button>
-          {%- endfor %}
-        </div>
         {%- for group in site.data.trainings %}
-        <ul class="workshop-log" id="workshops-{{ group.year }}" hidden>
-          {%- for event in group.events %}
-          <li><span>{{ event.school }}</span><span class="date">{{ event.date }}</span></li>
-          {%- endfor %}
-        </ul>
+        <div class="workshop-year">
+          <h3><span class="year-label">{{ group.year }}</span><span class="workshop-count">{{ group.events.size }} sessions</span></h3>
+          <ul class="workshop-log">
+            {%- for event in group.events %}
+            <li><span>{{ event.school }}</span><span class="date">{{ event.date }}</span></li>
+            {%- endfor %}
+          </ul>
+        </div>
         {%- endfor %}
       </div>
     </section>

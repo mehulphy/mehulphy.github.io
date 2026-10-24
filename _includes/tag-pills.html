@@ -3,7 +3,7 @@
   {%- assign key = cat | downcase -%}
   {%- assign tag = site.data.tags[key] -%}
   {%- if include.link -%}
-  <a class="pill" href="/writing/?tag={{ key | url_encode }}" style="background:var(--{{ tag.color | default: 'p7' }})">{{ tag.label | default: cat }}</a>
+  <a class="pill" href="/reflections/?tag={{ key | url_encode }}" style="background:var(--{{ tag.color | default: 'p7' }})">{{ tag.label | default: cat }}</a>
   {%- else -%}
   <span class="pill" style="background:var(--{{ tag.color | default: 'p7' }})">{{ tag.label | default: cat }}</span>
   {%- endif -%}

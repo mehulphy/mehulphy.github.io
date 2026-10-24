@@ -19,7 +19,8 @@ redirect_from:
 <section class="home-hero">
   <p class="eyebrow">Learn · Educate · Enlighten</p>
   <h1 class="display-title">Welcome.</h1>
-  <p class="home-intro">I’m Mehul, a learner who became an educator. This is my personal corner of the web, where I share my <a href="/writing/">writing</a> on learning, science and teaching, and my <a href="/poetry/">poetry</a>. If you’d like to know more about me, there’s a short <a href="/about/">about</a> page and my <a href="/cv/">CV</a>.</p>
+  <p class="home-intro">I’m Mehul, a learner and an educator. For more than twenty years I have worked in education: teaching higher secondary physics, studying pedagogy in real classrooms, and designing inquiry-based science and K-12 computer science programmes that have reached thousands of students and teachers across India. What drives it all is how people learn, through productive struggle, honest questions, and reasoning from evidence.</p>
+  <p class="home-intro">This is my personal corner of the web, where I share my <a href="/reflections/">reflections</a> and my <a href="/poetry/">poetry</a>. To know more about me, read the <a href="/about/">about</a> page or my <a href="/cv/">CV</a>.</p>
 </section>
 
 <section class="home-section">
@@ -27,12 +28,13 @@ redirect_from:
     <h2>Intellectual Rigour</h2>
     <a class="mono" href="{{ yt.channel }}" target="_blank" rel="noopener">Visit the channel ↗</a>
   </div>
+  <p class="section-intro">{{ site.data.home.intellectual_rigour }}</p>
   <div class="yt-card">
     <div class="yt-text">
       <p class="eyebrow">{% if video_id != "" %}Latest interview{% else %}On YouTube{% endif %}</p>
       {% if video_id != "" and yt.latest.title != "" %}<h3>{{ yt.latest.title }}</h3>{% endif %}
       {% if yt.latest.guest != "" %}<p class="yt-guest">with {{ yt.latest.guest }}</p>{% endif %}
-      <p class="yt-blurb">{{ yt.blurb }}</p>
+      {% if yt.latest.about %}<p class="yt-blurb">{{ yt.latest.about }}</p>{% endif %}
       <a class="button-pill filled" style="background:var(--p6)" href="{% if video_id != '' %}{{ yt.latest.url }}{% else %}{{ yt.channel }}{% endif %}" target="_blank" rel="noopener">{% if video_id != "" %}Watch on YouTube ↗{% else %}Watch the interviews ↗{% endif %}</a>
     </div>
     {% if video_id != "" %}
@@ -49,6 +51,7 @@ redirect_from:
     <h2>Selected poetry</h2>
     <a class="mono" href="/poetry/">All poems →</a>
   </div>
+  <p class="section-intro">{{ site.data.home.poetry }}</p>
   <div class="card-grid">
     {%- for poem in selected_poems %}
     {%- assign lines = poem.content | strip_html | strip | newline_to_br | split: "<br />" %}
@@ -65,9 +68,10 @@ redirect_from:
 {% if latest %}
 <section class="home-section">
   <div class="home-section-head">
-    <h2>Latest article</h2>
-    <a class="mono" href="/writing/">All writing →</a>
+    <h2>Latest reflections</h2>
+    <a class="mono" href="/reflections/">All reflections →</a>
   </div>
+  <p class="section-intro">{{ site.data.home.reflections }}</p>
   {% include home-post-card.html post=latest latest=true %}
 </section>
 {% endif %}
@@ -75,8 +79,8 @@ redirect_from:
 {% if selected_posts.size > 0 %}
 <section class="home-section">
   <div class="home-section-head">
-    <h2>Selected writing</h2>
-    <a class="mono" href="/writing/">All writing →</a>
+    <h2>Selected reflections</h2>
+    <a class="mono" href="/reflections/">All reflections →</a>
   </div>
   <div class="card-grid">
     {%- for post in selected_posts %}
@@ -85,3 +89,7 @@ redirect_from:
   </div>
 </section>
 {% endif %}
+
+<aside class="disclaimer">
+  <p><strong>A note on what you read here.</strong> Everything shared on this website is my personal opinion and my own reflection. It does not represent the views of any organisation I am, or have been, associated with.</p>
+</aside>

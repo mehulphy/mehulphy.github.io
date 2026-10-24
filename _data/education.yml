@@ -1,14 +1,26 @@
 - degree: M.Sc. Physics (Nuclear Physics)
   institution: The Maharaja Sayajirao University of Baroda
   period: 2003 to 2005
-  note: >-
-    Academic Secretary, Physical Society; co-founded PhysiCreation. Master’s
-    project at the Astronomy & Astrophysics Division, PRL Ahmedabad.
+  details:
+    - Academic Secretary of the Physical Society, Department of Physics, Faculty of Science
+    - Co-founded PhysiCreation, a weekly science puzzle and news initiative for physics students
+    - "Seminars: “Imagination and Observations in Physics”; V838 Monocerotis, National Science Day 2005"
+    - NZQA-recognised as equivalent to a New Zealand Level 9 qualification (April 2026)
 
-- degree: Ph.D. Entrance Test (Qualified)
+- degree: Master's Project
+  institution: Astronomy and Astrophysics Division, Physical Research Laboratory, Ahmedabad
+  period: "2004"
+  details:
+    - Current research trends in the field of Astronomy
+
+- degree: Ph.D. Entrance Test (PET), Qualified
   institution: The Maharaja Sayajirao University of Baroda
-  period: "2010"
+  period: Apr 2010
+  details:
+    - Cleared the qualifying examination for admission to the Ph.D. Programme
 
 - degree: B.Sc. Physics
   institution: The Maharaja Sayajirao University of Baroda
   period: 2000 to 2003
+  details:
+    - Physics (Major), Mathematics, Statistics

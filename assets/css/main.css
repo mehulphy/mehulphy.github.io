@@ -181,7 +181,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 /* ============================================================
    Writing (home) & archive
    ============================================================ */
-.home-hero { max-width: 760px; }
+.home-hero { max-width: none; }
 .home-intro { margin: 24px 0 0; font-size: 21px; line-height: 1.65; font-weight: 350; color: var(--body); text-wrap: pretty; }
 
 .home-section { margin-top: 72px; }
@@ -201,10 +201,10 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 
 .yt-card {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
   gap: 32px;
   align-items: center;
-  padding: 28px;
+  padding: 32px;
   border-radius: 24px;
   background: var(--quote);
 }
@@ -537,11 +537,23 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .cv-entry-org { grid-column: 1 / -1; font-style: italic; color: var(--muted); }
 .cv-entry-desc { grid-column: 1 / -1; margin: 6px 0 0; font-size: 17.5px; line-height: 1.6; color: var(--body); }
 
-.project-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; min-width: 0; }
-.project-card { padding: 18px; border-radius: 16px; display: grid; gap: 6px; text-decoration: none; color: var(--ink); }
-a.project-card:hover { color: var(--ink); opacity: .85; }
+.cv-prose { display: grid; gap: 1em; font-size: 18px; line-height: 1.65; color: var(--body); min-width: 0; }
+.cv-prose p { margin: 0; }
+.cv-specialisations { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-top: 4px; }
+.cv-specialisations .label { font-family: var(--mono); font-size: 12px; color: var(--muted); margin-right: 6px; }
+.cv-snapshot { margin: 0; padding-left: 1.1em; display: grid; gap: 10px; font-size: 17.5px; line-height: 1.6; color: var(--body); min-width: 0; }
+.cv-snapshot li::marker { color: var(--accent); }
+.cv-entry-details { grid-column: 1 / -1; margin: 6px 0 0; padding-left: 1.1em; font-size: 16.5px; line-height: 1.55; color: var(--body); }
+.cv-entry-details li::marker { color: var(--accent); }
+
+.project-cards { display: grid; gap: 12px; min-width: 0; }
+.project-card { padding: 18px 20px; border-radius: 16px; display: grid; gap: 4px; color: var(--ink); }
+.project-card-head { display: flex; justify-content: space-between; align-items: baseline; gap: 4px 16px; flex-wrap: wrap; }
 .project-card-name { font-size: 20px; }
-.project-card-meta { font-family: var(--mono); font-size: 11.5px; }
+.project-card-name a { text-decoration-color: var(--ink); }
+.project-card-meta { font-family: var(--mono); font-size: 11.5px; white-space: nowrap; }
+.project-card-org { font-style: italic; font-size: 15.5px; opacity: .8; }
+.project-card-desc { margin: 4px 0 0; font-size: 16.5px; line-height: 1.6; }
 
 .community { display: grid; gap: 18px; font-size: 18px; line-height: 1.55; min-width: 0; }
 .community .name { font-size: 20px; }
@@ -550,9 +562,10 @@ a.project-card:hover { color: var(--ink); opacity: .85; }
 
 .workshops { display: grid; gap: 14px; min-width: 0; }
 .workshops > p { margin: 0; font-size: 18px; line-height: 1.6; color: var(--body); }
-.workshop-chips { display: flex; gap: 8px; flex-wrap: wrap; }
-.workshop-chips .chip { padding: 6px 12px; }
-.workshop-chips .chip[aria-expanded="true"] { background: var(--p1); border-color: transparent; }
+.workshop-year { display: grid; gap: 8px; margin-top: 10px; }
+.workshop-year h3 { margin: 0; display: flex; align-items: baseline; gap: 12px; font-weight: 400; }
+.workshop-year .year-label { font-size: 28px; }
+.workshop-count { font-family: var(--mono); font-size: 12px; color: var(--muted); }
 .workshop-log { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 6px; font-size: 16.5px; }
 .workshop-log li { display: flex; justify-content: space-between; gap: 16px; padding-bottom: 6px; border-bottom: 1px dashed var(--line); }
 .workshop-log .date { font-family: var(--mono); font-size: 12px; color: var(--muted); white-space: nowrap; }
@@ -564,10 +577,12 @@ a.project-card:hover { color: var(--ink); opacity: .85; }
 /* ============================================================
    About
    ============================================================ */
-.about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 56px; align-items: start; }
+.about-grid { margin-top: 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 56px; align-items: start; }
+.portrait-figure { margin: 0; display: grid; gap: 12px; }
+.portrait-figure figcaption { font-size: 15px; line-height: 1.5; font-style: italic; color: var(--muted); }
 .portrait { aspect-ratio: 4 / 5; border-radius: 24px; overflow: hidden; background: var(--p1); }
 .portrait img { width: 100%; height: 100%; object-fit: cover; }
-.about-body { margin-top: 28px; display: grid; gap: 1em; font-size: 20px; line-height: 1.7; font-weight: 350; text-wrap: pretty; }
+.about-body { display: grid; gap: 1em; font-size: 20px; line-height: 1.7; font-weight: 350; text-wrap: pretty; }
 .about-body p { margin: 0; }
 .motto { margin-top: 80px; padding: 56px 28px; border-radius: 28px; background: var(--quote); text-align: center; }
 .motto .eyebrow { margin-bottom: 18px; }
@@ -589,6 +604,8 @@ a.project-card:hover { color: var(--ink); opacity: .85; }
    Small screens
    ============================================================ */
 @media (max-width: 720px) {
+  .yt-card { grid-template-columns: 1fr; padding: 22px; }
+  .yt-video { order: -1; }
   .wrap { padding-left: 16px; padding-right: 16px; }
   .site-main { padding-top: 48px; }
   .cv-section { grid-template-columns: 1fr; gap: 18px; }
@@ -609,6 +626,19 @@ a.project-card:hover { color: var(--ink); opacity: .85; }
   .site-header, .site-footer, .no-print { display: none !important; }
   body { background: #fff; }
   .site-main { padding-top: 0; }
-  .workshop-log[hidden] { display: grid !important; }
   .cv-section, .cv-entry { break-inside: avoid; }
 }
+
+/* ============================================================
+   Home disclaimer
+   ============================================================ */
+.disclaimer {
+  margin-top: 72px;
+  padding: 18px 22px;
+  border-radius: 16px;
+  border: 1px dashed var(--line);
+}
+.disclaimer p { margin: 0; font-size: 15.5px; line-height: 1.6; font-style: italic; color: var(--muted); }
+.disclaimer strong { font-style: normal; font-weight: 500; color: var(--body); }
+
+.section-intro { margin: -6px 0 24px; font-size: 18.5px; line-height: 1.65; font-weight: 350; color: var(--body); text-wrap: pretty; }

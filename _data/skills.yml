@@ -1,10 +1,12 @@
+- label: Block-based coding
+  items: ScratchJr, Scratch, MakeCode
 - label: Programming
   items: Python, JavaScript, HTML, CSS, Java, Dart, Fortran
-- label: Block coding
-  items: ScratchJr, Scratch, MakeCode
 - label: Data science
   items: NumPy, Pandas, Matplotlib, Plotly
 - label: Operating systems
   items: Linux, macOS, Windows
+- label: Project management
+  items: ClickUp, Todoist
 - label: Languages
-  items: English (IELTS 8.0), Gujarati, Hindi
+  items: English, Gujarati, Hindi

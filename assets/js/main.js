@@ -21,7 +21,7 @@
   systemDark.addEventListener && systemDark.addEventListener('change', updateToggle);
   updateToggle();
 
-  // ----- Year / subject filters on the writing and archive pages.
+  // ----- Year / subject filters on the reflections page.
   var scope = document.querySelector('[data-filterable]');
   if (scope) {
     var params = new URLSearchParams(location.search);
@@ -91,18 +91,4 @@
     if (clear) clear.addEventListener('click', function () { state.year = ''; state.tag = ''; render(); });
     render();
   }
-
-  // ----- CV workshop chips: each year's chip reveals that year's log.
-  var chips = document.querySelectorAll('.workshop-chips [aria-controls]');
-  chips.forEach(function (chip) {
-    chip.addEventListener('click', function () {
-      var open = chip.getAttribute('aria-expanded') !== 'true';
-      chips.forEach(function (other) {
-        other.setAttribute('aria-expanded', 'false');
-        document.getElementById(other.getAttribute('aria-controls')).hidden = true;
-      });
-      chip.setAttribute('aria-expanded', open ? 'true' : 'false');
-      document.getElementById(chip.getAttribute('aria-controls')).hidden = !open;
-    });
-  });
 })();
