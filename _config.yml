@@ -8,7 +8,9 @@ baseurl: ""
 
 author:
   name: Mehul Desai
-  email: quantumehul@gmail.com
+  # Email is split so the full address never appears in the built site or RSS feed.
+  email_user: quantumehul
+  email_domain: gmail.com
   linkedin: mehulphy
   github: mehulphy
   gitlab: mehulphy
@@ -50,5 +52,6 @@ exclude:
   - vendor/
   - "*.zip"
   - "*.tex"
+  - "*.pdf"
   - "We were scalars.md"
   - "મારી ગુજરાતી કૃતિઓ.md"

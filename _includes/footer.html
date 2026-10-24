@@ -4,6 +4,6 @@
     <a href="/feed.xml">rss</a>
     <a href="{{ site.author.intellectualrigour_yt }}" target="_blank" rel="noopener">youtube</a>
     <a href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener">github</a>
-    <a href="mailto:{{ site.author.email }}">email</a>
+    {% include email-link.html label="email" %}
   </nav>
 </footer>

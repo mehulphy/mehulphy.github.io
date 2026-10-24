@@ -32,5 +32,5 @@ permalink: /about/
 <section class="about-links">
   <a class="button-pill filled" style="background:var(--p3)" href="/cv/">Read the CV →</a>
   <a class="button-pill filled" style="background:var(--p6)" href="{{ site.author.intellectualrigour_yt }}" target="_blank" rel="noopener">Intellectual Rigour ↗</a>
-  <a class="button-pill" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
+  {% include email-link.html class="button-pill" label="Email me ↗" %}
 </section>

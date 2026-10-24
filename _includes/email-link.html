@@ -1,0 +1,9 @@
+{%- comment -%}
+  Email link that never puts the full address in the page source.
+  The address is stored reversed in two halves and assembled by
+  assets/js/main.js only when the link is clicked.
+  Usage: {% include email-link.html class="button-pill" label="Email me" %}
+{%- endcomment -%}
+{%- assign u = site.author.email_user | split: "" | reverse | join: "" -%}
+{%- assign d = site.author.email_domain | split: "" | reverse | join: "" -%}
+<a class="{{ include.class }} js-email" href="/about/"{% if include.class contains "filled" %} style="background:var(--p1)"{% endif %} data-u="{{ u }}" data-d="{{ d }}" rel="nofollow">{{ include.label | default: "email" }}</a>

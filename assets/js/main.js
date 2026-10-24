@@ -91,4 +91,13 @@
     if (clear) clear.addEventListener('click', function () { state.year = ''; state.tag = ''; render(); });
     render();
   }
+
+  // ----- Email links: the address is assembled only when clicked.
+  document.querySelectorAll('.js-email').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var rev = function (t) { return t.split('').reverse().join(''); };
+      e.preventDefault();
+      window.location.href = 'mailto:' + rev(a.getAttribute('data-u')) + '@' + rev(a.getAttribute('data-d'));
+    });
+  });
 })();

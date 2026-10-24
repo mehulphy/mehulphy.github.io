@@ -16,8 +16,7 @@ redirect_from:
       <p class="cv-lede">{{ site.data.cv.lede }}</p>
     </div>
     <div class="cv-actions">
-      <a class="button-pill filled no-print" style="background:var(--p1)" href="/Mehul_Desai_Resume.pdf" target="_blank" rel="noopener">Download PDF ↓</a>
-      <a class="button-pill" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
+      {% include email-link.html class="button-pill filled no-print" label="Email me ↗" %}
     </div>
   </section>
 

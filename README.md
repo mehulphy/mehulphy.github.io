@@ -114,7 +114,9 @@ Don't end lines with two spaces; a plain line break is enough. Poems are numbere
 | `_data/trainings.yml` | Workshops delivered: the full log, grouped by year |
 | `_data/skills.yml` | Skills |
 
-Replace `Mehul_Desai_Resume.pdf` to update the downloadable PDF. Printing the CV page hides the header and footer.
+There is no downloadable PDF. Printing the CV page hides the header and footer.
+
+Your email is stored in `_config.yml` as `email_user` and `email_domain`, and `_includes/email-link.html` writes it into pages only in scrambled form; `assets/js/main.js` assembles the address when someone clicks an email link.
 
 ---
 
