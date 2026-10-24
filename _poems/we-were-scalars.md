@@ -3,7 +3,7 @@ title: "We Were Scalars"
 lang: en
 order: 1
 featured: true
-note: "Written for my teacher when I was in college — and dedicated to every teacher."
+note: "Written for my teacher when I was in college, and dedicated to every teacher."
 ---
 
 We were scalars,

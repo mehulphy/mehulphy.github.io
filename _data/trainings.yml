@@ -9,12 +9,12 @@
     - { school: "Howard Public School, Himayatnagar, Hyderabad", date: "11 June 2019" }
     - { school: "Sanghamitra School, Nizampet Road, Hyderabad", date: "10 June 2019" }
     - { school: "VAV International School, Udumalaipettai, Tamil Nadu", date: "27 May 2019" }
-    - { school: "Tapovan School, Bangalore", date: "20–21 May 2019" }
+    - { school: "Tapovan School, Bangalore", date: "20-21 May 2019" }
     - { school: "Saraswati Senior Secondary School, Narnaul, Haryana", date: "4 May 2019" }
     - { school: "Gurukulam The School", date: "3 May 2019" }
     - { school: "Delhi Public School, Rudrapur, Uttarakhand", date: "3 April 2019" }
     - { school: "Aurum The Global School, Haldwani, Uttarakhand", date: "2 April 2019" }
-    - { school: "Bhartiyam International School, Rudrapur–Kichha Road, Uttarakhand", date: "1 April 2019" }
+    - { school: "Bhartiyam International School, Rudrapur-Kichha Road, Uttarakhand", date: "1 April 2019" }
     - { school: "Insight Academy, Bangalore", date: "6 March 2019" }
     - { school: "Stepping Stones Senior Secondary School, Chandigarh", date: "21 February 2019" }
     - { school: "Vivekanand School, Anand Vihar, New Delhi", date: "20 February 2019" }
@@ -28,40 +28,40 @@
 - year: "2012"
   events:
     - { school: "Little Flower Public School, Bangalore", date: "26 May and 9 June 2012" }
-    - { school: "Sri Kumaran’s Children’s Home (ICSE & CBSE), Bangalore", date: "7–8 June 2012" }
-    - { school: "Carmel High School, Bangalore", date: "1–2 June 2012" }
-    - { school: "DAV Public School, Bangalore", date: "30–31 May 2012" }
-    - { school: "Delhi Public School, North Bangalore", date: "28–29 May 2012" }
-    - { school: "Kamala Niketan, Trichy", date: "28–29 May 2012" }
-    - { school: "St. Joseph’s School, Malakpet, Hyderabad", date: "25–26 April 2012" }
+    - { school: "Sri Kumaran’s Children’s Home (ICSE & CBSE), Bangalore", date: "7-8 June 2012" }
+    - { school: "Carmel High School, Bangalore", date: "1-2 June 2012" }
+    - { school: "DAV Public School, Bangalore", date: "30-31 May 2012" }
+    - { school: "Delhi Public School, North Bangalore", date: "28-29 May 2012" }
+    - { school: "Kamala Niketan, Trichy", date: "28-29 May 2012" }
+    - { school: "St. Joseph’s School, Malakpet, Hyderabad", date: "25-26 April 2012" }
     - { school: "St. Joseph’s School, Habsiguda, Hyderabad", date: "23 April 2012" }
-    - { school: "Johnson Grammar School, Habsiguda, Hyderabad", date: "20–21 April 2012" }
+    - { school: "Johnson Grammar School, Habsiguda, Hyderabad", date: "20-21 April 2012" }
     - { school: "St. Andrews School, Bowenpally, Hyderabad", date: "18 April 2012" }
-    - { school: "Modern School, New Delhi", date: "13–14 April 2012" }
-    - { school: "St. Andrews School, Hyderabad", date: "12–13 January 2012" }
+    - { school: "Modern School, New Delhi", date: "13-14 April 2012" }
+    - { school: "St. Andrews School, Hyderabad", date: "12-13 January 2012" }
 
 - year: "2011"
   events:
-    - { school: "Johnson Grammar School, Nacharam, Hyderabad", date: "14–16 December 2011" }
+    - { school: "Johnson Grammar School, Nacharam, Hyderabad", date: "14-16 December 2011" }
     - { school: "St. Andrews School, Hyderabad", date: "10 December 2011" }
-    - { school: "Gitanjali Devshala, Hyderabad", date: "28–29 November 2011" }
-    - { school: "Indus World School, Indore", date: "18–19 November 2011" }
+    - { school: "Gitanjali Devshala, Hyderabad", date: "28-29 November 2011" }
+    - { school: "Indus World School, Indore", date: "18-19 November 2011" }
     - { school: "St. Andrews School, Hyderabad", date: "23 August 2011" }
-    - { school: "Indus World School, Ahmednagar", date: "30–31 July 2011" }
+    - { school: "Indus World School, Ahmednagar", date: "30-31 July 2011" }
     - { school: "Johnson Grammar School, LB Nagar, Hyderabad", date: "9 July 2011" }
     - { school: "Kotwal School, Bolaram, Hyderabad", date: "1 July 2011" }
-    - { school: "Delhi Public School, North Bangalore", date: "29–30 June 2011" }
+    - { school: "Delhi Public School, North Bangalore", date: "29-30 June 2011" }
     - { school: "Genesis International School, Miyapur, Hyderabad", date: "18 and 25 June 2011" }
     - { school: "St. Joseph’s School, Habsiguda, Hyderabad", date: "14 June 2011" }
     - { school: "Sharada High School, Iasnapur", date: "11 June 2011" }
     - { school: "St. Joseph’s School, Malakpet, Hyderabad", date: "11 June 2011" }
     - { school: "Pragati Vidyaniketan School, Amberpet, Hyderabad", date: "10 June 2011" }
-    - { school: "DAV Public School, Bangalore", date: "1–2 June 2011" }
+    - { school: "DAV Public School, Bangalore", date: "1-2 June 2011" }
     - { school: "Little Flower School, Bangalore", date: "28, 30 and 31 May 2011" }
     - { school: "Carmel High School, Bangalore (30 teachers)", date: "25 and 27 May 2011" }
-    - { school: "Indus World School, Indore", date: "17–22 May 2011" }
+    - { school: "Indus World School, Indore", date: "17-22 May 2011" }
     - { school: "Martin Luther Public School", date: "May 2011" }
-    - { school: "Johnson Grammar School, Hyderabad", date: "17–18 April 2011" }
+    - { school: "Johnson Grammar School, Hyderabad", date: "17-18 April 2011" }
     - { school: "Auden Public School, Giri Nagar", date: "January 2011" }
 
 - year: "2010"

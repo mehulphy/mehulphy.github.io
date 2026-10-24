@@ -1,28 +1,28 @@
-# color is one of the pastel tokens p1–p7; url is optional.
+# color is one of the pastel tokens p1 to p7; url is optional.
 - name: Qubits CS
-  meta: 2021 — now · K–12 CS
+  meta: 2021 to now · K-12 CS
   color: p3
   url: https://qubitscs.com
 - name: BeeCurious
-  meta: 2020 — 23 · Inquiry science
+  meta: 2020 to 2023 · Inquiry science
   color: p4
   url: https://www.beecuriousedu.com
 - name: Ek Kadam Aagal
-  meta: 2020 — now · GCERT
+  meta: 2020 to now · GCERT
   color: p5
 - name: DiscoverEd
-  meta: 2013 — 17 · NGSS science
+  meta: 2013 to 2017 · NGSS science
   color: p2
 - name: Project Ramanujan
-  meta: 2015 — 16 · Maths pedagogy
+  meta: 2015 to 2016 · Maths pedagogy
   color: p1
 - name: AssessEd
-  meta: 2016 — 19 · Remediation
+  meta: 2016 to 2019 · Remediation
   color: p6
 - name: YELP
-  meta: 2010 — 12 · Experiential
+  meta: 2010 to 2012 · Experiential
   color: p7
 - name: ScienceLab
-  meta: 2012 — 13 · Science kits
+  meta: 2012 to 2013 · Science kits
   color: p3
   url: http://nextsciencelab.in
