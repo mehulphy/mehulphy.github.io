@@ -8,8 +8,6 @@ lang: en
 lang_ref: the-science-of-sleep
 ---
 
-*An accessible guide to sleep stages, their biological purpose, and why every hour matters*
-
 ## Sleep Is Not What We Think It Is
 
 Most of us think of sleep as a passive state — a nightly pause where the body simply switches off and waits for morning. Nothing could be further from the truth. Sleep is one of the most metabolically and neurologically active periods of your entire day. While you lie still, your brain is consolidating memories, your immune system is deploying its defences, your body is repairing damaged tissue, and your hormonal system is running processes that cannot happen any other time. Far from being a shutdown, sleep is a highly organised biological programme that your body absolutely depends on.

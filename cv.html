@@ -1,0 +1,111 @@
+---
+layout: default
+title: CV
+section: cv
+description: Curriculum vitae of Mehul Desai — experience, education, projects, community work, workshops, and skills.
+permalink: /cv/
+redirect_from:
+  - /contributions/
+  - /work/
+---
+<div class="cv-page">
+  <section class="cv-head">
+    <div>
+      <p class="eyebrow">Curriculum Vitae</p>
+      <h1 class="display-title">{{ site.author.name }}</h1>
+      <p class="cv-lede">{{ site.data.cv.summary }}</p>
+    </div>
+    <div class="cv-actions">
+      <a class="button-pill filled no-print" style="background:var(--p1)" href="/Mehul_Desai_Resume.pdf" target="_blank" rel="noopener">Download PDF ↓</a>
+      <a class="button-pill" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
+    </div>
+  </section>
+
+  <section class="stats">
+    {%- for s in site.data.cv.stats %}
+    <div class="stat"><span class="stat-value">{{ s.value }}</span><span class="stat-label">{{ s.label }}</span></div>
+    {%- endfor %}
+  </section>
+
+  <div class="cv-sections">
+    <section class="cv-section">
+      <h2>Experience</h2>
+      <div class="cv-entries">
+        {%- for job in site.data.experience %}
+        <div class="cv-entry">
+          <span class="cv-entry-title">{{ job.title }}</span><span class="cv-entry-period">{{ job.period }}</span>
+          <span class="cv-entry-org">{{ job.org }}</span>
+          {% if job.description %}<p class="cv-entry-desc">{{ job.description }}</p>{% endif %}
+        </div>
+        {%- endfor %}
+      </div>
+    </section>
+
+    <section class="cv-section">
+      <h2>Education</h2>
+      <div class="cv-entries tight">
+        {%- for edu in site.data.education %}
+        <div class="cv-entry">
+          <span class="cv-entry-title">{{ edu.degree }}</span><span class="cv-entry-period">{{ edu.period }}</span>
+          <span class="cv-entry-org">{{ edu.institution }}</span>
+          {% if edu.note %}<p class="cv-entry-desc">{{ edu.note }}</p>{% endif %}
+        </div>
+        {%- endfor %}
+      </div>
+    </section>
+
+    <section class="cv-section">
+      <h2>Selected projects</h2>
+      <div class="project-cards">
+        {%- for project in site.data.projects %}
+        {%- if project.url %}
+        <a class="project-card" href="{{ project.url }}" target="_blank" rel="noopener" style="background:var(--{{ project.color }})"><span class="project-card-name">{{ project.name }}</span><span class="project-card-meta">{{ project.meta }}</span></a>
+        {%- else %}
+        <div class="project-card" style="background:var(--{{ project.color }})"><span class="project-card-name">{{ project.name }}</span><span class="project-card-meta">{{ project.meta }}</span></div>
+        {%- endif %}
+        {%- endfor %}
+      </div>
+    </section>
+
+    <section class="cv-section">
+      <h2>Community</h2>
+      <div class="community">
+        {%- for item in site.data.community %}
+        <div>
+          <span class="name">{% if item.url %}<a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.name }}</a>{% else %}{{ item.name }}{% endif %}</span>
+          <span class="meta">· {{ item.meta }}</span>
+          {% if item.description %}<br><span class="desc">{{ item.description }}</span>{% endif %}
+        </div>
+        {%- endfor %}
+      </div>
+    </section>
+
+    <section class="cv-section">
+      <h2>Workshops delivered</h2>
+      <div class="workshops">
+        <p>{{ site.data.cv.workshops_intro }}</p>
+        <div class="workshop-chips">
+          {%- for group in site.data.trainings %}
+          <button class="chip" type="button" aria-expanded="false" aria-controls="workshops-{{ group.year }}">{{ group.year }} · {{ group.events.size }} schools</button>
+          {%- endfor %}
+        </div>
+        {%- for group in site.data.trainings %}
+        <ul class="workshop-log" id="workshops-{{ group.year }}" hidden>
+          {%- for event in group.events %}
+          <li><span>{{ event.school }}</span><span class="date">{{ event.date }}</span></li>
+          {%- endfor %}
+        </ul>
+        {%- endfor %}
+      </div>
+    </section>
+
+    <section class="cv-section">
+      <h2>Skills</h2>
+      <div class="skills">
+        {%- for row in site.data.skills %}
+        <div class="skill-row"><span class="label">{{ row.label }}</span><span>{{ row.items }}</span></div>
+        {%- endfor %}
+      </div>
+    </section>
+  </div>
+</div>

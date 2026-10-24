@@ -1,0 +1,35 @@
+---
+layout: default
+title: Poetry
+section: poetry
+description: Poems by Mehul Desai, in English and Gujarati.
+permalink: /poetry/
+---
+{%- assign poems = site.poems | sort: "order" -%}
+{%- assign groups = poems | group_by: "lang" -%}
+
+<section class="poetry-hero">
+  <p class="eyebrow">Poetry</p>
+  <h1>Verse</h1>
+  <p>Poems kept here as they were found — some finished, some still deciding.</p>
+  <div class="dots"><span style="background:var(--p1)"></span><span style="background:var(--p2)"></span><span style="background:var(--p4)"></span></div>
+</section>
+
+{%- for group in groups %}
+<section class="poem-list">
+  {% if groups.size > 1 %}<h2 class="poem-group" lang="{{ group.name }}">{% if group.name == 'gu' %}ગુજરાતીમાં{% else %}In English{% endif %}</h2>{% endif %}
+  {%- for poem in group.items %}
+  {%- assign first_line = poem.content | strip_html | strip | newline_to_br | split: "<br />" | first | strip %}
+  <a class="poem-row" href="{{ poem.url }}" lang="{{ poem.lang }}">
+    <span class="numeral">{% include roman.html index=forloop.index0 %}</span>
+    <span class="poem-row-text">
+      <span class="poem-row-title">{{ poem.title }}</span>
+      <span class="poem-row-first">{{ first_line }}</span>
+    </span>
+    <span class="date">{{ poem.written }}</span>
+  </a>
+  {%- endfor %}
+</section>
+{%- else %}
+<section class="poem-list"><p class="empty-state">No poems yet.</p></section>
+{%- endfor %}

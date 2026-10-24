@@ -1,21 +1,10 @@
-technical:
-  - "Block-based coding: ScratchJr, Scratch, MakeCode"
-  - "Programming: Python, JavaScript, HTML/CSS, Java, Fortran"
-  - "Data Science: NumPy, Pandas, Matplotlib, Plotly"
-  - "OS: Linux, macOS, Windows"
-  - "Tools: Git, GitHub, GitLab, ClickUp, Todoist"
-
-domain:
-  - Curriculum design & development (K–12)
-  - Inquiry-based learning (NGSS, CIE, CBSE, CISCE)
-  - K–12 computer science curriculum (ISTE, CSTA aligned)
-  - Teacher professional development
-  - Instructional design & cognitive science
-  - Product development & program operations
-
-other:
-  - "Creator, YouTube channel: Intellectual Rigour"
-  - "Member, Amateur Astronomers Association of Vadodara (2003–2010)"
-  - "Evaluator, Gujarat HSE Board Physics Practical Exams (2006, 2008)"
-  - "Volunteer, Vigyan Rail — Science on Wheels"
-  - "Short-term project, Astronomy & Astrophysics Division, Physical Research Laboratory, Ahmedabad (2004)"
+- label: Programming
+  items: Python, JavaScript, HTML, CSS, Java, Dart, Fortran
+- label: Block coding
+  items: ScratchJr, Scratch, MakeCode
+- label: Data science
+  items: NumPy, Pandas, Matplotlib, Plotly
+- label: Operating systems
+  items: Linux, macOS, Windows
+- label: Languages
+  items: English (IELTS 8.0), Gujarati, Hindi

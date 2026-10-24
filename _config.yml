@@ -1,5 +1,5 @@
 title: Quantum Reflections
-tagline: Physicist · Educator · Learning designer
+tagline: Learn · Educate · Enlighten
 description: >-
   Quantum Reflections — writing by Mehul Desai on physics, science,
   education, and learning.
@@ -25,12 +25,22 @@ plugins:
 feed:
   path: feed.xml
 
+collections:
+  poems:
+    output: true
+    permalink: /poetry/:name/
+
 defaults:
   - scope:
       path: ""
       type: posts
     values:
       layout: post
+  - scope:
+      path: ""
+      type: poems
+    values:
+      layout: poem
 
 exclude:
   - Gemfile
@@ -38,3 +48,6 @@ exclude:
   - .DS_Store
   - README.md
   - vendor/
+  - "*.zip"
+  - "We were scalars.md"
+  - "મારી ગુજરાતી કૃતિઓ.md"

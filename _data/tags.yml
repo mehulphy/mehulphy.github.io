@@ -1,0 +1,12 @@
+# Subject tags: key is the lowercase category used in a post's front matter.
+# color is one of the pastel tokens p1–p7 defined in assets/css/main.css.
+physics:            { label: Physics,          color: p3 }
+pedagogy:           { label: Pedagogy,         color: p4 }
+computer science:   { label: Computer Science, color: p1 }
+ai:                 { label: AI,               color: p6 }
+curriculum:         { label: Curriculum,       color: p5 }
+conversations:      { label: Conversations,    color: p2 }
+reflections:        { label: Reflections,      color: p7 }
+science:            { label: Science,          color: p3 }
+health:             { label: Health,           color: p4 }
+education:          { label: Education,        color: p5 }

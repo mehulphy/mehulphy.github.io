@@ -1,0 +1,5 @@
+{%- assign years = include.posts | group_by_exp: "p", "p.date | date: '%Y'" -%}
+<button class="chip chip-year is-active" type="button" data-year="">All</button>
+{%- for y in years %}
+<button class="chip chip-year" type="button" data-year="{{ y.name }}">{{ y.name }}</button>
+{%- endfor -%}

@@ -1,0 +1,13 @@
+# Intellectual Rigour — shown on the home page.
+channel: https://www.youtube.com/@IntellectualRigour
+blurb: >-
+  I run Intellectual Rigour, a YouTube channel of long-form conversations
+  with leading scientists and mathematicians — about their lives, their
+  ideas, and the questions that keep them going.
+
+# The latest interview. Paste the full YouTube link (watch?v=… or youtu.be/…).
+# While this is empty, the home page shows a card linking to the channel.
+latest:
+  url: "https://youtu.be/U1zaZ-SCmvc"
+  title: "On Discovering Pulsars"
+  guest: "Jocelyn Bell Burnell"

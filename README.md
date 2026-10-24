@@ -1,6 +1,8 @@
 # Quantum Reflections
 
-Mehul Desai's blog and CV — [mehulphy.github.io](https://mehulphy.github.io). Built with [Jekyll](https://jekyllrb.com/) and hosted on [GitHub Pages](https://pages.github.com/): push to `main` and the site rebuilds within about a minute.
+Mehul Desai's blog, poetry, and CV — [mehulphy.github.io](https://mehulphy.github.io). Built with [Jekyll](https://jekyllrb.com/) and hosted on [GitHub Pages](https://pages.github.com/): push to `main` and the site rebuilds within about a minute.
+
+The design comes from a Claude Design mock-up ("Pastel minimalist Jekyll blog").
 
 ---
 
@@ -8,23 +10,40 @@ Mehul Desai's blog and CV — [mehulphy.github.io](https://mehulphy.github.io). 
 
 | URL | Source | Contents |
 |---|---|---|
-| `/` | `index.md` | The blog — every English post, grouped by year |
-| `/about/` | `about.md` | Short bio and links |
-| `/cv/` | `cv.md` | Full CV, rendered from `_data/` |
+| `/` | `index.html` | Home — welcome, Intellectual Rigour's latest interview, post cards (latest first) |
+| `/writing/` | `writing.html` | Subject cards, year filter, and a compact list of every post |
+| `/poetry/` | `poetry.html` | Poems from `_poems/`, newest first |
+| `/cv/` | `cv.html` | CV, rendered from `_data/` |
+| `/about/` | `about.html` | Short bio, motto, links |
 | `/blog/YYYY/MM/DD/slug/` | `_posts/` | Individual posts |
+| `/poetry/slug/` | `_poems/` | Individual poems |
 
-Old URLs (`/blog/`, `/contributions/`, `/work/`) redirect via `jekyll-redirect-from`.
+Old URLs (`/blog/`, `/archive/`, `/contributions/`, `/work/`) redirect via `jekyll-redirect-from`.
+
+### Choosing what appears on the home page
+
+The home page always shows your newest post under **Latest**. To pick posts or poems for the **Selected writing** and **Selected poetry** sections, add this line to their front matter:
+
+```yaml
+featured: true
+```
+
+Remove the line (or set it to `false`) to take something off the home page. A section is hidden when nothing in it is featured; the latest post is never repeated under Selected writing.
+
+### Latest interview on the home page
+
+Edit `_data/youtube.yml` and paste the video link (either `youtube.com/watch?v=…` or `youtu.be/…`) plus its title and guest under `latest`. The video is embedded on the home page; leave `url` empty to show a card that links to the channel instead.
 
 ---
 
 ## Local development
 
-**Prerequisites:** Ruby 3.x and Bundler.
+**Prerequisites:** Ruby 3.x and Bundler (`brew install ruby`).
 
 ```bash
 bundle install
-bundle exec jekyll serve --livereload
-# open http://localhost:4000
+bundle exec jekyll serve --livereload              # http://localhost:4000
+bundle exec jekyll serve --livereload --unpublished # also show draft poems
 ```
 
 `_site/` is generated output — never edit it directly. Restart the server after changing `_config.yml`.
@@ -38,67 +57,67 @@ Create `_posts/YYYY-MM-DD-your-post-title.md`:
 ```yaml
 ---
 title: "Your Post Title"
-description: "One sentence — shown under the title on the home page and in the post header."
+description: "One sentence — shown under the title on the home page and as the article's subtitle."
 date: 2026-05-10
-categories: [education]
+categories: [pedagogy, physics]   # subjects; colours come from _data/tags.yml
+# Optional — each appears in the article's details bar when set:
+updated: 2026-05-20
+place: Gandhinagar
+series: How people learn
 ---
 
 Your content in Markdown.
 ```
 
-The `post` layout is applied automatically. Posts dated in the future don't appear until that date.
+Reading time and word count are calculated automatically. The first paragraph gets a drop cap; `>` blockquotes become pull quotes; Markdown footnotes (`[^1]`) are styled at the foot of the article.
+
+To add a new subject, give it a label and one of the pastel colours (`p1`–`p7`) in `_data/tags.yml`.
 
 ### Gujarati translations
 
-Give both versions the same `lang_ref` and set `lang`:
+Give both versions the same `lang_ref` and set `lang: en` or `lang: gu`. Each version links to the other; only English posts are listed.
 
-```yaml
-lang: en          # or gu
-lang_ref: the-science-of-sleep
+---
+
+## Writing a poem
+
+Create `_poems/your-poem.md`. Write one line per line and separate stanzas with a blank line:
+
+```markdown
+---
+title: "We Were Scalars"
+lang: en              # en or gu — poems are grouped by language
+order: 1              # position in the list (lower comes first)
+written: "2003"       # optional — any text, shown under the title
+note: "Written for my teacher when I was in college."   # optional — shown after the poem
+---
+
+We were scalars,
+you made us vectors,
+
+In your classroom, the world came to life,
 ```
 
-Each version then links to the other. Only English posts are listed on the home page.
+Don't end lines with two spaces — a plain line break is enough. Poems are numbered with Roman numerals within each language. Gujarati text uses Noto Serif Gujarati.
 
 ---
 
 ## Updating the CV
 
-The CV page reads everything from `_data/`:
-
 | File | Section |
 |---|---|
-| `experience.yml` | Experience |
-| `projects.yml` | Projects & Programs (`url` optional) |
-| `education.yml` | Education (`note` optional) |
-| `skills.yml` | `domain` → Expertise, `technical` → Technical skills (`"Label: items"` renders the label in bold), `other` → Other |
-| `trainings.yml` | Trainings conducted — one collapsible group per period |
+| `_data/cv.yml` | Summary, headline numbers, workshops intro |
+| `_data/experience.yml` | Experience |
+| `_data/education.yml` | Education (`note` optional) |
+| `_data/projects.yml` | Selected projects cards (`color` p1–p7, `url` optional) |
+| `_data/community.yml` | Community |
+| `_data/trainings.yml` | Workshops delivered — one chip per year, expands to the full log |
+| `_data/skills.yml` | Skills |
 
-The summary bullets at the top are written directly in `cv.md`. Replace `Mehul_Desai_Resume.pdf` to update the downloadable PDF. Printing the CV page from a browser gives a clean, nav-free version with all training groups expanded.
+Replace `Mehul_Desai_Resume.pdf` to update the downloadable PDF. Printing the CV page hides the header and footer and expands every workshop log.
 
 ---
 
 ## Design
 
-All styles live in `assets/css/main.css`. Colours are tokens at the top of the file:
-
-- Off-white background (`#FAF9F6`), charcoal text (`#2B2B2B`)
-- One pastel accent — powder blue (`#A7C7E7`) — used for link underlines, section rules, tags, and selection
-- Dark mode follows the visitor's system setting; there is no toggle and no JavaScript
-
----
-
-## File structure
-
-```
-_config.yml          site title, author, social links, plugins
-_data/               CV data (see above)
-_includes/           nav.html, footer.html
-_layouts/            default.html (base), post.html
-_posts/              blog posts
-assets/css/main.css  all styles
-assets/img/          favicon and images for posts
-index.md             home / blog listing
-about.md             about page
-cv.md                CV page
-Mehul_Desai_Resume.pdf
-```
+All styles live in `assets/css/main.css`; colour tokens are at the top. Type is Cormorant Garamond (display), Newsreader (body), and IBM Plex Mono (labels). The theme follows the visitor's system setting until they use the light/dark toggle, which is remembered. `assets/js/main.js` handles the toggle, the writing/archive filters, and the CV workshop chips; everything still renders without JavaScript.

@@ -1,189 +1,72 @@
-- period: "2022"
-  context: "CS Curriculum Workshops"
+# Professional development workshops delivered, most recent first.
+- year: "2022"
   events:
-    - school: "Candour5 Education Academy"
-      location: "Bangalore, Karnataka"
-      date: "June 11, 2022"
-    - school: "VAHE Global Academy"
-      location: "Bangalore, Karnataka"
-      date: "June 2 & 6, 2022"
+    - { school: "Candour5 Education Academy, Bangalore", date: "11 June 2022" }
+    - { school: "VAHE Global Academy, Bangalore", date: "2 and 6 June 2022" }
 
-- period: "2019"
-  context: "DiscoverEd & AssessEd Teacher Professional Development"
+- year: "2019"
   events:
-    - school: "Sri Sankara Senior Secondary School"
-      location: "Arunachalapuram, Chennai, Tamil Nadu"
-      date: "January 12, 2019"
-    - school: "Shri R. M. Jain Vidhyashram"
-      location: "Kakkalur, Chennai, Tamil Nadu"
-      date: "January 10, 2019"
-    - school: "Tapovan School"
-      location: "Koppa Gate, Bangalore, Karnataka"
-      date: "January 28, 2019"
-    - school: "Shri Venkateshwar International School"
-      location: "Sector 18, New Delhi"
-      date: "February 13, 2019"
-    - school: "Genesis Global School"
-      location: "Noida"
-      date: "February 16, 2019"
-    - school: "Venkateshwar Global School"
-      location: "Sector 13, Rohini, New Delhi"
-    - school: "Vivekanand School"
-      location: "Anand Vihar, New Delhi"
-      date: "February 20, 2019"
-    - school: "Stepping Stones Senior Secondary School"
-      location: "Chandigarh"
-      date: "February 21, 2019"
-    - school: "Insight Academy"
-      location: "Bangalore, Karnataka"
-      date: "March 6, 2019"
-    - school: "Bhartiyal International School"
-      location: "Rudrapur-Kichha Road, Uttarakhand"
-      date: "April 1, 2019"
-    - school: "Aurum The Global School"
-      location: "Haldwani, Uttarakhand"
-      date: "April 2, 2019"
-    - school: "Delhi Public School"
-      location: "Rudrapur, Uttarakhand"
-      date: "April 3, 2019"
-    - school: "Gurukulam The School"
-      date: "May 3, 2019"
-    - school: "Saraswati Senior Secondary School"
-      location: "Narnaul, Haryana"
-      date: "May 4, 2019"
-    - school: "Tapovan School"
-      location: "Bangalore, Karnataka"
-      date: "May 20–21, 2019"
-    - school: "VAV International School"
-      location: "Udumalaipettai, Tamil Nadu"
-      date: "May 27, 2019"
-    - school: "Sanghamitra School"
-      location: "Nizampet Road, Hyderabad"
-      date: "June 10, 2019"
-    - school: "Howard Public School"
-      location: "Hayathnagar, Hyderabad"
-      date: "June 11, 2019"
+    - { school: "Howard Public School, Himayatnagar, Hyderabad", date: "11 June 2019" }
+    - { school: "Sanghamitra School, Nizampet Road, Hyderabad", date: "10 June 2019" }
+    - { school: "VAV International School, Udumalaipettai, Tamil Nadu", date: "27 May 2019" }
+    - { school: "Tapovan School, Bangalore", date: "20–21 May 2019" }
+    - { school: "Saraswati Senior Secondary School, Narnaul, Haryana", date: "4 May 2019" }
+    - { school: "Gurukulam The School", date: "3 May 2019" }
+    - { school: "Delhi Public School, Rudrapur, Uttarakhand", date: "3 April 2019" }
+    - { school: "Aurum The Global School, Haldwani, Uttarakhand", date: "2 April 2019" }
+    - { school: "Bhartiyam International School, Rudrapur–Kichha Road, Uttarakhand", date: "1 April 2019" }
+    - { school: "Insight Academy, Bangalore", date: "6 March 2019" }
+    - { school: "Stepping Stones Senior Secondary School, Chandigarh", date: "21 February 2019" }
+    - { school: "Vivekanand School, Anand Vihar, New Delhi", date: "20 February 2019" }
+    - { school: "Venkateshwar Global School, Sector 13, Rohini, New Delhi", date: "2019" }
+    - { school: "Genesis Global School, Noida", date: "16 February 2019" }
+    - { school: "Shri Venkateshwar International School, Sector 18, New Delhi", date: "13 February 2019" }
+    - { school: "Tapovan School, Koppa Gate, Bangalore, Karnataka", date: "28 January 2019" }
+    - { school: "Sri Sankara Senior Secondary School, Arunachalapuram, Chennai, Tamil Nadu", date: "12 January 2019" }
+    - { school: "Shri R. M. Jain Vidhyashram, Kakkalur, Chennai, Tamil Nadu", date: "10 January 2019" }
 
-- period: "2011–2012"
-  context: "YELP Teacher Training Program (Yardstick)"
+- year: "2012"
   events:
-    - school: "Modern School"
-      location: "New Delhi"
-      date: "April 13–14, 2012"
-    - school: "St. Andrews School"
-      location: "Bowenpally, Hyderabad"
-      date: "April 18, 2012"
-    - school: "Johnson Grammar School"
-      location: "Habsiguda, Hyderabad"
-      date: "April 20–21, 2012"
-    - school: "St. Joseph's School"
-      location: "Habsiguda, Hyderabad"
-      date: "April 23, 2012"
-    - school: "St. Joseph's School"
-      location: "Malakpet, Hyderabad"
-      date: "April 25–26, 2012"
-    - school: "Little Flower School"
-      location: "Bangalore, Karnataka"
-      date: "May 26 & June 9, 2012"
-    - school: "DPS North"
-      location: "Bangalore, Karnataka"
-      date: "May 28–29, 2012"
-    - school: "DAV Public School"
-      location: "Bangalore, Karnataka"
-      date: "May 30–31, 2012"
-    - school: "Kamala Niketan"
-      location: "Trichy, Tamil Nadu"
-      date: "May 28–29, 2012"
-    - school: "Carmel High School"
-      location: "Bangalore, Karnataka"
-      date: "June 1–2, 2012"
-    - school: "Sri Kumarans ICSE & CBSE"
-      location: "Bangalore, Karnataka"
-      date: "June 7–8, 2012"
-    - school: "Sri Kumaran's Children's Home"
-      location: "Bangalore, Karnataka"
-      date: "June 7–8, 2012"
-    - school: "Little Flower Public School"
-      location: "Bangalore, Karnataka"
-      date: "June 9, 2012"
-    - school: "Martin Luther Public School"
-      date: "May 2011"
-    - school: "Auden Public School"
-      location: "Giri Nagar"
-      date: "January 2011"
-    - school: "Johnson Grammar School"
-      location: "Hyderabad"
-      date: "April 17–18, 2011"
-    - school: "Indus World School"
-      location: "Indore"
-      date: "May 17–22, 2011"
-    - school: "Carmel High School"
-      location: "Bangalore, Karnataka"
-      date: "May 25 & 27, 2011"
-    - school: "Little Flower School"
-      location: "Bangalore, Karnataka"
-      date: "May 28, 30 & 31, 2011"
-    - school: "DAV Public School"
-      location: "Bangalore, Karnataka"
-      date: "June 1–2, 2011"
-    - school: "Pragati Vidyaniketan School"
-      location: "Amberpet, Hyderabad"
-      date: "June 10, 2011"
-    - school: "Sharada High School"
-      location: "Iasnapur"
-      date: "June 11, 2011"
-    - school: "St. Joseph's School"
-      location: "Malakpet, Hyderabad"
-      date: "June 11, 2011"
-    - school: "St. Joseph's School"
-      location: "Habsiguda, Hyderabad"
-      date: "June 14, 2011"
-    - school: "Genesis International School"
-      location: "Miyapur, Hyderabad"
-      date: "June 18 & 25, 2011"
-    - school: "Delhi Public School"
-      location: "North Bangalore"
-      date: "June 29–30, 2011"
-    - school: "Kotwal School"
-      location: "Bolaram, Hyderabad"
-      date: "July 1, 2011"
-    - school: "Johnson Grammar School"
-      location: "LB Nagar, Hyderabad"
-      date: "July 9, 2011"
-    - school: "Indus World School"
-      location: "Ahmednagar"
-      date: "July 30–31, 2011"
-    - school: "St. Andrews School"
-      location: "Hyderabad"
-      date: "August 23, 2011"
-    - school: "Gitanjali Devshala"
-      location: "Hyderabad"
-      date: "November 28–29, 2011"
-    - school: "Indus World School"
-      location: "Indore"
-      date: "November 18–19, 2011"
-    - school: "St. Andrews School"
-      location: "Hyderabad"
-      date: "December 10, 2011"
-    - school: "Johnson Grammar School"
-      location: "Nacharam, Hyderabad"
-      date: "December 14–16, 2011"
-    - school: "St. Andrews School"
-      location: "Hyderabad"
-      date: "January 12–13, 2012"
+    - { school: "Little Flower Public School, Bangalore", date: "26 May and 9 June 2012" }
+    - { school: "Sri Kumaran’s Children’s Home (ICSE & CBSE), Bangalore", date: "7–8 June 2012" }
+    - { school: "Carmel High School, Bangalore", date: "1–2 June 2012" }
+    - { school: "DAV Public School, Bangalore", date: "30–31 May 2012" }
+    - { school: "Delhi Public School, North Bangalore", date: "28–29 May 2012" }
+    - { school: "Kamala Niketan, Trichy", date: "28–29 May 2012" }
+    - { school: "St. Joseph’s School, Malakpet, Hyderabad", date: "25–26 April 2012" }
+    - { school: "St. Joseph’s School, Habsiguda, Hyderabad", date: "23 April 2012" }
+    - { school: "Johnson Grammar School, Habsiguda, Hyderabad", date: "20–21 April 2012" }
+    - { school: "St. Andrews School, Bowenpally, Hyderabad", date: "18 April 2012" }
+    - { school: "Modern School, New Delhi", date: "13–14 April 2012" }
+    - { school: "St. Andrews School, Hyderabad", date: "12–13 January 2012" }
 
-- period: "2010"
-  context: "Early Yardstick YELP Workshops"
+- year: "2011"
   events:
-    - school: "St. Joseph's School"
-      location: "Habsiguda, Hyderabad"
-      date: "December 15, 2010"
-    - school: "Kotwal School"
-      location: "Maredpally, Hyderabad"
-      date: "December 18, 2010"
-    - school: "Kotwal School"
-      location: "Bolaram, Hyderabad"
-      date: "December 20, 2010"
-    - school: "Mother's Integral"
-      location: "Hyderabad"
-      date: "December 21, 2010"
+    - { school: "Johnson Grammar School, Nacharam, Hyderabad", date: "14–16 December 2011" }
+    - { school: "St. Andrews School, Hyderabad", date: "10 December 2011" }
+    - { school: "Gitanjali Devshala, Hyderabad", date: "28–29 November 2011" }
+    - { school: "Indus World School, Indore", date: "18–19 November 2011" }
+    - { school: "St. Andrews School, Hyderabad", date: "23 August 2011" }
+    - { school: "Indus World School, Ahmednagar", date: "30–31 July 2011" }
+    - { school: "Johnson Grammar School, LB Nagar, Hyderabad", date: "9 July 2011" }
+    - { school: "Kotwal School, Bolaram, Hyderabad", date: "1 July 2011" }
+    - { school: "Delhi Public School, North Bangalore", date: "29–30 June 2011" }
+    - { school: "Genesis International School, Miyapur, Hyderabad", date: "18 and 25 June 2011" }
+    - { school: "St. Joseph’s School, Habsiguda, Hyderabad", date: "14 June 2011" }
+    - { school: "Sharada High School, Iasnapur", date: "11 June 2011" }
+    - { school: "St. Joseph’s School, Malakpet, Hyderabad", date: "11 June 2011" }
+    - { school: "Pragati Vidyaniketan School, Amberpet, Hyderabad", date: "10 June 2011" }
+    - { school: "DAV Public School, Bangalore", date: "1–2 June 2011" }
+    - { school: "Little Flower School, Bangalore", date: "28, 30 and 31 May 2011" }
+    - { school: "Carmel High School, Bangalore (30 teachers)", date: "25 and 27 May 2011" }
+    - { school: "Indus World School, Indore", date: "17–22 May 2011" }
+    - { school: "Martin Luther Public School", date: "May 2011" }
+    - { school: "Johnson Grammar School, Hyderabad", date: "17–18 April 2011" }
+    - { school: "Auden Public School, Giri Nagar", date: "January 2011" }
+
+- year: "2010"
+  events:
+    - { school: "Mother’s Integral, Hyderabad", date: "21 December 2010" }
+    - { school: "Kotwal School, Bolaram, Hyderabad", date: "20 December 2010" }
+    - { school: "Kotwal School, Maredpally, Hyderabad", date: "18 December 2010" }
+    - { school: "St. Joseph’s School, Habsiguda, Hyderabad", date: "15 December 2010" }

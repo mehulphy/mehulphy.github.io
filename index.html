@@ -1,0 +1,87 @@
+---
+layout: default
+section: home
+redirect_from:
+  - /blog/
+---
+{%- assign posts = site.posts | where_exp: "p", "p.lang != 'gu'" -%}
+{%- assign latest = posts | first -%}
+{%- assign selected_posts = posts | where: "featured", true | where_exp: "p", "p.url != latest.url" -%}
+{%- assign selected_poems = site.poems | where: "featured", true | sort: "order" -%}
+{%- assign yt = site.data.youtube -%}
+{%- assign video_id = "" -%}
+{%- if yt.latest.url contains "youtu.be/" -%}
+  {%- assign video_id = yt.latest.url | split: "youtu.be/" | last | split: "?" | first -%}
+{%- elsif yt.latest.url contains "v=" -%}
+  {%- assign video_id = yt.latest.url | split: "v=" | last | split: "&" | first -%}
+{%- endif -%}
+
+<section class="home-hero">
+  <p class="eyebrow">Learn · Educate · Enlighten</p>
+  <h1 class="display-title">Welcome.</h1>
+  <p class="home-intro">I’m Mehul — a learner who became an educator. This is my personal corner of the web, where I share my <a href="/writing/">writing</a> on learning, science and teaching, and my <a href="/poetry/">poetry</a>. If you’d like to know more about me, there’s a short <a href="/about/">about</a> page and my <a href="/cv/">CV</a>.</p>
+</section>
+
+<section class="home-section">
+  <div class="home-section-head">
+    <h2>Intellectual Rigour</h2>
+    <a class="mono" href="{{ yt.channel }}" target="_blank" rel="noopener">Visit the channel ↗</a>
+  </div>
+  <div class="yt-card">
+    <div class="yt-text">
+      <p class="eyebrow">{% if video_id != "" %}Latest interview{% else %}On YouTube{% endif %}</p>
+      {% if video_id != "" and yt.latest.title != "" %}<h3>{{ yt.latest.title }}</h3>{% endif %}
+      {% if yt.latest.guest != "" %}<p class="yt-guest">with {{ yt.latest.guest }}</p>{% endif %}
+      <p class="yt-blurb">{{ yt.blurb }}</p>
+      <a class="button-pill filled" style="background:var(--p6)" href="{% if video_id != '' %}{{ yt.latest.url }}{% else %}{{ yt.channel }}{% endif %}" target="_blank" rel="noopener">{% if video_id != "" %}Watch on YouTube ↗{% else %}Watch the interviews ↗{% endif %}</a>
+    </div>
+    {% if video_id != "" %}
+    <div class="yt-video">
+      <iframe src="https://www.youtube-nocookie.com/embed/{{ video_id }}" title="{{ yt.latest.title | default: 'Latest Intellectual Rigour interview' }}" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+{% if selected_poems.size > 0 %}
+<section class="home-section">
+  <div class="home-section-head">
+    <h2>Selected poetry</h2>
+    <a class="mono" href="/poetry/">All poems →</a>
+  </div>
+  <div class="card-grid">
+    {%- for poem in selected_poems %}
+    {%- assign lines = poem.content | strip_html | strip | newline_to_br | split: "<br />" %}
+    <a class="card card-poem" href="{{ poem.url }}" lang="{{ poem.lang }}">
+      <h3>{{ poem.title }}</h3>
+      <p class="card-poem-lines">{% for line in lines limit: 2 %}{{ line | strip }}{% unless forloop.last %}<br>{% endunless %}{% endfor %}</p>
+      <span class="card-poem-more">Read the poem →</span>
+    </a>
+    {%- endfor %}
+  </div>
+</section>
+{% endif %}
+
+{% if latest %}
+<section class="home-section">
+  <div class="home-section-head">
+    <h2>Latest article</h2>
+    <a class="mono" href="/writing/">All writing →</a>
+  </div>
+  {% include home-post-card.html post=latest latest=true %}
+</section>
+{% endif %}
+
+{% if selected_posts.size > 0 %}
+<section class="home-section">
+  <div class="home-section-head">
+    <h2>Selected writing</h2>
+    <a class="mono" href="/writing/">All writing →</a>
+  </div>
+  <div class="card-grid">
+    {%- for post in selected_posts %}
+    {% include home-post-card.html post=post %}
+    {%- endfor %}
+  </div>
+</section>
+{% endif %}

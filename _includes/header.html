@@ -1,0 +1,16 @@
+<header class="site-header wrap">
+  <a class="brand" href="/">
+    <span class="brand-dots"><span style="background:var(--p2)"></span><span style="background:var(--p1)"></span><span style="background:var(--p4)"></span></span>
+    <span class="brand-text">
+      <span class="brand-name">{{ site.title }}</span>
+    </span>
+  </a>
+  <nav class="site-nav">
+    <a href="/"{% if page.section == 'home' %} class="is-active"{% endif %}>home</a>
+    <a href="/writing/"{% if page.section == 'writing' %} class="is-active"{% endif %}>writing</a>
+    <a href="/poetry/"{% if page.section == 'poetry' %} class="is-active"{% endif %}>poetry</a>
+    <a href="/cv/"{% if page.section == 'cv' %} class="is-active"{% endif %}>cv</a>
+    <a href="/about/"{% if page.section == 'about' %} class="is-active"{% endif %}>about</a>
+    <button class="theme-toggle" id="themeToggle" type="button" title="Toggle theme">dark</button>
+  </nav>
+</header>

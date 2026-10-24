@@ -1,22 +1,51 @@
 ---
 layout: default
+section: writing
 ---
-<article>
-  <header class="post-header">
-    <div class="post-meta">
-      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
-      {% for cat in page.categories %}<span class="tag">{{ cat }}</span>{% endfor %}
-    </div>
-    <h1 class="page-title">{{ page.title }}</h1>
-    {% if page.description %}<p class="post-description">{{ page.description }}</p>{% endif %}
+{%- if page.lang == 'gu' -%}
+  {%- assign siblings = site.posts | where: "lang", "gu" -%}
+{%- else -%}
+  {%- assign siblings = site.posts | where_exp: "p", "p.lang != 'gu'" -%}
+{%- endif -%}
+{%- assign older = nil -%}{%- assign newer = nil -%}
+{%- for p in siblings -%}
+  {%- if p.url == page.url -%}
+    {%- assign i_newer = forloop.index0 | minus: 1 -%}
+    {%- assign i_older = forloop.index0 | plus: 1 -%}
+    {%- if i_newer >= 0 -%}{%- assign newer = siblings[i_newer] -%}{%- endif -%}
+    {%- assign older = siblings[i_older] -%}
+  {%- endif -%}
+{%- endfor -%}
+
+<div class="article-page">
+  <a class="back-link" href="/writing/">← all writing</a>
+
+  <header class="article-header">
+    {% if page.categories.size > 0 %}<div class="pills">{% include tag-pills.html tags=page.categories link=true %}</div>{% endif %}
+    <h1 class="display-title">{{ page.title }}</h1>
+    {% if page.description %}<p class="article-dek">{{ page.description }}</p>{% endif %}
     {% if page.lang_ref %}
       {% assign alt_post = site.posts | where: "lang_ref", page.lang_ref | where_exp: "p", "p.lang != page.lang" | first %}
-      {% if alt_post %}
-        <p class="post-lang"><a href="{{ alt_post.url }}">{% if page.lang == 'gu' %}Read in English{% else %}Read in Gujarati{% endif %}</a></p>
-      {% endif %}
+      {% if alt_post %}<p class="article-lang"><a href="{{ alt_post.url }}">{% if page.lang == 'gu' %}Read in English →{% else %}Read in Gujarati →{% endif %}</a></p>{% endif %}
     {% endif %}
+    {%- assign words = content | number_of_words %}
+    <dl class="article-meta">
+      <div><dt>Published</dt><dd>{{ page.date | date: "%B %-d, %Y" }}</dd></div>
+      {% if page.updated %}<div><dt>Updated</dt><dd>{{ page.updated | date: "%b %-d, %Y" }}</dd></div>{% endif %}
+      <div><dt>Reading</dt><dd>{% include reading-time.html content=content %} min · {{ words }} words</dd></div>
+      {% if page.place %}<div><dt>Written in</dt><dd>{{ page.place }}</dd></div>{% endif %}
+      {% if page.series %}<div><dt>Series</dt><dd>{{ page.series }}</dd></div>{% endif %}
+    </dl>
   </header>
-  <div class="prose">
+
+  <article class="prose">
     {{ content }}
-  </div>
-</article>
+  </article>
+
+  {% if older or newer %}
+  <nav class="post-nav">
+    {% if older %}<a class="older" href="{{ older.url }}"><span class="post-nav-label">← Older</span><span class="post-nav-title">{{ older.title }}</span></a>{% endif %}
+    {% if newer %}<a class="newer" href="{{ newer.url }}"><span class="post-nav-label">Newer →</span><span class="post-nav-title">{{ newer.title }}</span></a>{% endif %}
+  </nav>
+  {% endif %}
+</div>

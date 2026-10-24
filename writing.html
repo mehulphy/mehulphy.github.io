@@ -1,0 +1,60 @@
+---
+layout: default
+title: Writing
+section: writing
+description: Everything on Quantum Reflections, by subject and year.
+permalink: /writing/
+redirect_from:
+  - /archive/
+---
+{%- assign posts = site.posts | where_exp: "p", "p.lang != 'gu'" -%}
+{%- assign cats = "" | split: "" -%}
+{%- for p in posts -%}{%- assign cats = cats | concat: p.categories -%}{%- endfor -%}
+{%- assign cats = cats | uniq -%}
+
+<p class="eyebrow">Writing</p>
+<h1 class="display-title">Everything, by subject &amp; year</h1>
+
+<div data-filterable>
+  {% if cats.size > 0 %}
+  <section class="tag-cards">
+    {%- for cat in cats -%}
+    {%- assign key = cat | downcase -%}{%- assign tag = site.data.tags[key] -%}
+    {%- assign count = posts | where_exp: "p", "p.categories contains cat" | size %}
+    <button class="tag-card chip-tag" type="button" data-tag="{{ key }}" style="background:var(--{{ tag.color | default: 'p7' }})">
+      <span class="tag-card-name">{{ tag.label | default: cat }}</span>
+      <span class="tag-card-count">{{ count }} {% if count == 1 %}post{% else %}posts{% endif %}</span>
+    </button>
+    {%- endfor %}
+  </section>
+  {% endif %}
+
+  <div class="archive-bar">
+    <div class="chip-row">{% include year-filters.html posts=posts %}</div>
+    <div class="filter-status">
+      <span data-count>{{ posts.size }} {% if posts.size == 1 %}post{% else %}posts{% endif %}</span>
+      <button class="clear-filters" type="button" data-clear hidden>clear</button>
+    </div>
+  </div>
+
+  <section class="archive-list">
+    {%- assign years = posts | group_by_exp: "p", "p.date | date: '%Y'" -%}
+    {%- for y in years %}
+    <div class="archive-year" data-group>
+      <div class="year-label">{{ y.name }}</div>
+      {%- for post in y.items %}
+      <a class="archive-row" href="{{ post.url }}" data-item data-year="{{ y.name }}" data-tags="{{ post.categories | join: '|' | downcase }}">
+        <span class="date">{{ post.date | date: "%b %-d" }}</span>
+        <span class="title">{{ post.title }}</span>
+        <span class="tag-dots">
+          {%- for cat in post.categories -%}{%- assign key = cat | downcase -%}{%- assign tag = site.data.tags[key] -%}
+          <span style="background:var(--{{ tag.color | default: 'p7' }})" title="{{ tag.label | default: cat }}"></span>
+          {%- endfor -%}
+        </span>
+      </a>
+      {%- endfor %}
+    </div>
+    {%- endfor %}
+    <p class="empty-state" data-empty{% if posts.size > 0 %} hidden{% endif %}>Nothing here yet — try another year or subject.</p>
+  </section>
+</div>

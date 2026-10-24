@@ -1,0 +1,35 @@
+---
+layout: default
+section: poetry
+---
+{%- assign poems = site.poems | sort: "order" -%}
+{%- assign same_lang = poems | where: "lang", page.lang -%}
+{%- assign prev_poem = nil -%}{%- assign next_poem = nil -%}{%- assign idx = 0 -%}
+{%- for p in same_lang -%}{%- if p.url == page.url -%}{%- assign idx = forloop.index0 -%}{%- endif -%}{%- endfor -%}
+{%- for p in poems -%}
+  {%- if p.url == page.url -%}
+    {%- assign i_prev = forloop.index0 | minus: 1 -%}
+    {%- assign i_next = forloop.index0 | plus: 1 -%}
+    {%- if i_prev >= 0 -%}{%- assign prev_poem = poems[i_prev] -%}{%- endif -%}
+    {%- assign next_poem = poems[i_next] -%}
+  {%- endif -%}
+{%- endfor -%}
+
+<div class="poem-page">
+  <a class="back-link" href="/poetry/">← all poems</a>
+  <article class="poem">
+    <span class="numeral">{% include roman.html index=idx %}</span>
+    <h1>{{ page.title }}</h1>
+    {% if page.written %}<p class="poem-meta">{{ page.written }}</p>{% endif %}
+    <div class="poem-rule"></div>
+    <div class="stanzas">{{ content }}</div>
+    {% if page.note %}<p class="poem-note">{{ page.note }}</p>{% endif %}
+    <div class="dots"><span style="background:var(--p1)"></span><span style="background:var(--p2)"></span><span style="background:var(--p4)"></span></div>
+  </article>
+  {% if prev_poem or next_poem %}
+  <nav class="poem-nav">
+    {% if prev_poem %}<a href="{{ prev_poem.url }}" lang="{{ prev_poem.lang }}">← {{ prev_poem.title }}</a>{% endif %}
+    {% if next_poem %}<a class="next" href="{{ next_poem.url }}" lang="{{ next_poem.lang }}">{{ next_poem.title }} →</a>{% endif %}
+  </nav>
+  {% endif %}
+</div>
