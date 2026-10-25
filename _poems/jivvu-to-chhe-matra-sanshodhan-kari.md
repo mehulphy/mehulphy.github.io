@@ -2,6 +2,7 @@
 title: "જીવવું તો છે માત્ર સંશોધન કરી"
 lang: gu
 order: 11
+year: 2003
 featured: true
 written: "28 February 2003"
 note: "28 ફેબ્રુઆરી 2003, રાષ્ટ્રીય વિજ્ઞાન દિવસના નિમિત્તે લખેલી કૃતિ"

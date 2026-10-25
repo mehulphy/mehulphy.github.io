@@ -100,4 +100,21 @@
       window.location.href = 'mailto:' + rev(a.getAttribute('data-u')) + '@' + rev(a.getAttribute('data-d'));
     });
   });
+
+  // ----- Poetry page: show one language at a time.
+  var poemScope = document.querySelector('[data-poem-filter]');
+  if (poemScope) {
+    var tabs = poemScope.querySelectorAll('[data-lang]');
+    var groupsByLang = poemScope.querySelectorAll('[data-lang-group]');
+    var showLang = function (lang) {
+      tabs.forEach(function (t) { t.classList.toggle('is-active', t.getAttribute('data-lang') === lang); });
+      groupsByLang.forEach(function (g) { g.hidden = !!lang && g.getAttribute('data-lang-group') !== lang; });
+      var q = new URLSearchParams(location.search);
+      if (lang) q.set('lang', lang); else q.delete('lang');
+      var qs = q.toString();
+      history.replaceState(null, '', location.pathname + (qs ? '?' + qs : ''));
+    };
+    tabs.forEach(function (t) { t.addEventListener('click', function () { showLang(t.getAttribute('data-lang')); }); });
+    showLang(new URLSearchParams(location.search).get('lang') || '');
+  }
 })();

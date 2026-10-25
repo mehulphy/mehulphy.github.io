@@ -155,7 +155,8 @@ Create `_poems/your-poem.md`. Write one line per line and separate stanzas with 
 ---
 title: "We Were Scalars"
 lang: en              # en, gu or hi; poems are grouped by language
-order: 1              # position in the list (lower comes first)
+order: 1              # position among undated poems (lower comes first)
+year: 2003            # optional: poems with a year are listed first, oldest first
 written: "2003"       # optional: any text, shown under the title
 note: "Written for my teacher when I was in college."   # optional: shown after the poem
 ---
@@ -166,7 +167,7 @@ you made us vectors,
 In your classroom, the world came to life,
 ```
 
-Don't end lines with two spaces; a plain line break is enough. Poems are numbered with Roman numerals within each language. Gujarati text uses Noto Serif Gujarati and Hindi text uses Noto Serif Devanagari.
+Don't end lines with two spaces; a plain line break is enough. The Poetry page has All, Gujarati, Hindi and English tabs (in that order, set in `poetry.html`); `/poetry/?lang=hi` opens straight to one language. The intro text under the heading lives in `_data/home.yml` as `poetry_page`. Gujarati text uses Noto Serif Gujarati and Hindi text uses Noto Serif Devanagari.
 
 ---
 

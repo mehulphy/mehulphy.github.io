@@ -1,0 +1,8 @@
+{%- comment -%}
+  Sets `sorted_poems`: poems with a `year` first (oldest first), then the
+  rest in their `order`. Includes local drafts from _poem_drafts/.
+{%- endcomment -%}
+{%- assign all_poems = site.poems | concat: site.poem_drafts | sort: "order", "last" -%}
+{%- assign dated = all_poems | where_exp: "p", "p.year" | sort: "year" -%}
+{%- assign undated = all_poems | where_exp: "p", "p.year == nil" -%}
+{%- assign sorted_poems = dated | concat: undated -%}

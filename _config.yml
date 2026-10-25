@@ -62,5 +62,8 @@ exclude:
   - "*.zip"
   - "*.tex"
   - "*.pdf"
+  - "Photos-*"
+  - "*.HEIC"
+  - "*.heic"
   - "We were scalars.md"
   - "મારી ગુજરાતી કૃતિઓ.md"

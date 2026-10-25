@@ -2,34 +2,51 @@
 layout: default
 title: Poetry
 section: poetry
-description: Poems by Mehul Desai, in English and Gujarati.
+description: Poems by Mehul Desai, in English, Hindi and Gujarati.
 permalink: /poetry/
 ---
-{%- assign poems = site.poems | concat: site.poem_drafts | sort: "order", "last" -%}
-{%- assign groups = poems | group_by: "lang" -%}
+{%- include sorted-poems.html -%}
+{%- assign languages = "gu|Gujarati|ગુજરાતીમાં,hi|Hindi|हिंदी में,en|English|In English" | split: "," -%}
 
 <section class="poetry-hero">
   <p class="eyebrow">Poetry</p>
-  <h1>Verse</h1>
-  <p>Poems kept here as they were found: some finished, some still deciding. Not all of my poems are here, only a selected few.</p>
+  <h1>The Universe Within</h1>
+  <p class="poetry-subtitle"><span lang="gu">અંદરનું બ્રહ્માંડ</span> · <span lang="hi">भीतर का ब्रह्मांड</span></p>
+  <p>{{ site.data.home.poetry_page }}</p>
   <div class="dots"><span style="background:var(--p1)"></span><span style="background:var(--p2)"></span><span style="background:var(--p4)"></span></div>
 </section>
 
-{%- for group in groups %}
-<section class="poem-list">
-  {% if groups.size > 1 %}<h2 class="poem-group" lang="{{ group.name }}">{% if group.name == 'gu' %}ગુજરાતીમાં{% elsif group.name == 'hi' %}हिंदी में{% else %}In English{% endif %}</h2>{% endif %}
-  {%- for poem in group.items %}
-  {%- assign first_line = poem.content | strip_html | strip | newline_to_br | split: "<br />" | first | strip %}
-  <a class="poem-row" href="{{ poem.url }}" lang="{{ poem.lang }}">
-    <span class="numeral">{% include roman.html index=forloop.index0 %}</span>
-    <span class="poem-row-text">
-      <span class="poem-row-title">{{ poem.title }}{% include draft-badge.html doc=poem %}</span>
-      <span class="poem-row-first">{{ first_line }}</span>
-    </span>
-    <span class="date">{{ poem.written }}</span>
-  </a>
+<div data-poem-filter>
+  <nav class="poem-tabs" aria-label="Choose a language">
+    <button class="chip chip-year is-active" type="button" data-lang="">All</button>
+    {%- for l in languages %}
+    {%- assign parts = l | split: "|" %}
+    {%- assign count = sorted_poems | where: "lang", parts[0] | size %}
+    {%- if count > 0 %}
+    <button class="chip chip-year" type="button" data-lang="{{ parts[0] }}">{{ parts[1] }} <span class="poem-tab-count">{{ count }}</span></button>
+    {%- endif %}
+    {%- endfor %}
+  </nav>
+
+  {%- for l in languages %}
+  {%- assign parts = l | split: "|" %}
+  {%- assign group = sorted_poems | where: "lang", parts[0] %}
+  {%- if group.size > 0 %}
+  <section class="poem-list" data-lang-group="{{ parts[0] }}">
+    <h2 class="poem-group" lang="{{ parts[0] }}">{{ parts[2] }}</h2>
+    {%- for poem in group %}
+    {%- assign first_line = poem.content | strip_html | strip | newline_to_br | split: "<br />" | first | strip %}
+    <a class="poem-row" href="{{ poem.url }}" lang="{{ poem.lang }}">
+      <span class="poem-row-text">
+        <span class="poem-row-title">{{ poem.title }}{% include draft-badge.html doc=poem %}</span>
+        <span class="poem-row-first">{{ first_line }}</span>
+      </span>
+      <span class="date">{{ poem.written }}</span>
+    </a>
+    {%- endfor %}
+  </section>
+  {%- endif %}
   {%- endfor %}
-</section>
-{%- else %}
-<section class="poem-list"><p class="empty-state">No poems yet.</p></section>
-{%- endfor %}
+
+  {% if sorted_poems.size == 0 %}<section class="poem-list"><p class="empty-state">No poems yet.</p></section>{% endif %}
+</div>
