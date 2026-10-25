@@ -43,7 +43,7 @@ Edit `_data/youtube.yml` and paste the video link (either `youtube.com/watch?v=â
 ```bash
 bundle install
 bundle exec jekyll serve --livereload              # http://localhost:4000
-bundle exec jekyll serve --livereload --unpublished # also show draft poems
+bundle exec jekyll serve --livereload --drafts      # also show your private drafts
 ```
 
 `_site/` is generated output; never edit it directly. Restart the server after changing `_config.yml`.
@@ -116,6 +116,34 @@ Give the English and Gujarati files the same `lang_ref` and set `lang: en` in on
 ### 3. Preview, then publish
 
 Preview locally with `bundle exec jekyll serve --livereload` (see Local development) and open http://localhost:4000. Your newest post automatically becomes **Latest reflections** on the home page and appears on the Reflections page. Then publish it with the steps in **Publishing to GitHub** below.
+
+---
+
+## Drafts (private until you publish)
+
+Two folders hold work in progress. Both are in `.gitignore`, so their files stay on your Mac and are never pushed to GitHub or shown on the live site.
+
+| Folder | For | File name |
+|---|---|---|
+| `_drafts/` | Reflections | No date needed: `_drafts/why-questions-matter.md` |
+| `_poem_drafts/` | Poems | Same as a poem: `_poem_drafts/my-new-poem.md` |
+
+Write the file exactly as you would a finished post or poem, header block included.
+
+**Preview:** run the local server with drafts switched on:
+
+```bash
+bundle exec jekyll serve --livereload --drafts
+```
+
+Drafts appear at http://localhost:4000 with a yellow **Draft** badge, so you can always tell what isn't public yet. A draft reflection takes today's date in the preview.
+
+**Publish:** move the file into the public folder, then push.
+
+- Reflection: move `_drafts/why-questions-matter.md` to `_posts/2026-11-02-why-questions-matter.md` (add the date to the name).
+- Poem: move `_poem_drafts/my-new-poem.md` to `_poems/my-new-poem.md`.
+
+Then follow **Publishing to GitHub** below; `git status` will now show the moved file as new.
 
 ---
 

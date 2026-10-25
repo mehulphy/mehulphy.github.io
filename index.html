@@ -26,9 +26,13 @@ redirect_from:
 <section class="home-section">
   <div class="home-section-head">
     <h2>Intellectual Rigour</h2>
-    <a class="mono" href="{{ yt.channel }}" target="_blank" rel="noopener">Visit the channel ↗</a>
+    <div class="section-head-links">
+      <a class="mono" href="{{ site.author.intellectualrigour_web }}" target="_blank" rel="noopener">Visit the website ↗</a>
+      <a class="mono" href="{{ yt.channel }}" target="_blank" rel="noopener">Visit the channel ↗</a>
+    </div>
   </div>
-  <p class="section-intro">{{ site.data.home.intellectual_rigour }}</p>
+  {%- capture ir_link %}<a href="{{ site.author.intellectualrigour_web }}" target="_blank" rel="noopener">Intellectual Rigour</a>{% endcapture %}
+  <p class="section-intro">{{ site.data.home.intellectual_rigour | replace_first: "Intellectual Rigour", ir_link }}</p>
   <div class="yt-card">
     <div class="yt-text">
       <p class="eyebrow">{% if video_id != "" %}Latest interview{% else %}On YouTube{% endif %}</p>
@@ -36,6 +40,7 @@ redirect_from:
       {% if yt.latest.guest != "" %}<p class="yt-guest">with {{ yt.latest.guest }}</p>{% endif %}
       {% if yt.latest.about %}<p class="yt-blurb">{{ yt.latest.about }}</p>{% endif %}
       <a class="button-pill filled" style="background:var(--p6)" href="{% if video_id != '' %}{{ yt.latest.url }}{% else %}{{ yt.channel }}{% endif %}" target="_blank" rel="noopener">{% if video_id != "" %}Watch on YouTube ↗{% else %}Watch the interviews ↗{% endif %}</a>
+      <a class="button-pill" href="{{ site.author.intellectualrigour_web }}" target="_blank" rel="noopener">Visit intellectualrigour.org ↗</a>
     </div>
     {% if video_id != "" %}
     <div class="yt-video">

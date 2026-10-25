@@ -5,7 +5,7 @@ section: poetry
 description: Poems by Mehul Desai, in English and Gujarati.
 permalink: /poetry/
 ---
-{%- assign poems = site.poems | sort: "order" -%}
+{%- assign poems = site.poems | concat: site.poem_drafts | sort: "order", "last" -%}
 {%- assign groups = poems | group_by: "lang" -%}
 
 <section class="poetry-hero">
@@ -23,7 +23,7 @@ permalink: /poetry/
   <a class="poem-row" href="{{ poem.url }}" lang="{{ poem.lang }}">
     <span class="numeral">{% include roman.html index=forloop.index0 %}</span>
     <span class="poem-row-text">
-      <span class="poem-row-title">{{ poem.title }}</span>
+      <span class="poem-row-title">{{ poem.title }}{% include draft-badge.html doc=poem %}</span>
       <span class="poem-row-first">{{ first_line }}</span>
     </span>
     <span class="date">{{ poem.written }}</span>

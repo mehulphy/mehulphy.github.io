@@ -2,7 +2,7 @@
 layout: default
 section: poetry
 ---
-{%- assign poems = site.poems | sort: "order" -%}
+{%- assign poems = site.poems | concat: site.poem_drafts | sort: "order", "last" -%}
 {%- assign same_lang = poems | where: "lang", page.lang -%}
 {%- assign prev_poem = nil -%}{%- assign next_poem = nil -%}{%- assign idx = 0 -%}
 {%- for p in same_lang -%}{%- if p.url == page.url -%}{%- assign idx = forloop.index0 -%}{%- endif -%}{%- endfor -%}
@@ -20,6 +20,7 @@ section: poetry
   <article class="poem">
     <span class="numeral">{% include roman.html index=idx %}</span>
     <h1>{{ page.title }}</h1>
+    {% include draft-badge.html doc=page %}
     {% if page.written %}<p class="poem-meta">{{ page.written }}</p>{% endif %}
     <div class="poem-rule"></div>
     <div class="stanzas">{{ content }}</div>

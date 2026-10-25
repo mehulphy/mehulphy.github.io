@@ -3,7 +3,7 @@
   <div class="post-card-meta">
     <span>{{ post.date | date: "%b %-d, %Y" }}</span><span>·</span><span>{% include reading-time.html content=post.content %} min read</span>
   </div>
-  <h3>{{ post.title }}</h3>
+  <h3>{{ post.title }}{% include draft-badge.html doc=post %}</h3>
   {% if post.description %}<p>{{ post.description }}</p>{% endif %}
   {% if post.categories.size > 0 %}<div class="pills">{% include tag-pills.html tags=post.categories %}</div>{% endif %}
 </a>

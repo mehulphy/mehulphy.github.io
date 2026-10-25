@@ -22,6 +22,7 @@ section: reflections
 
   <header class="article-header">
     {% if page.categories.size > 0 %}<div class="pills">{% include tag-pills.html tags=page.categories link=true %}</div>{% endif %}
+    {% include draft-badge.html doc=page %}
     <h1 class="display-title">{{ page.title }}</h1>
     {% if page.description %}<p class="article-dek">{{ page.description }}</p>{% endif %}
     {% if page.lang_ref %}

@@ -31,6 +31,10 @@ collections:
   poems:
     output: true
     permalink: /poetry/:name/
+  # Private poem drafts (gitignored, so they only exist on your Mac).
+  poem_drafts:
+    output: true
+    permalink: /poetry/draft/:name/
 
 defaults:
   - scope:
@@ -41,6 +45,11 @@ defaults:
   - scope:
       path: ""
       type: poems
+    values:
+      layout: poem
+  - scope:
+      path: ""
+      type: poem_drafts
     values:
       layout: poem
 

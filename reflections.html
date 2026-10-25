@@ -46,7 +46,7 @@ redirect_from:
       {%- for post in y.items %}
       <a class="archive-row" href="{{ post.url }}" data-item data-year="{{ y.name }}" data-tags="{{ post.categories | join: '|' | downcase }}">
         <span class="date">{{ post.date | date: "%b %-d" }}</span>
-        <span class="title">{{ post.title }}</span>
+        <span class="title">{{ post.title }}{% include draft-badge.html doc=post %}</span>
         <span class="tag-dots">
           {%- for cat in post.categories -%}{%- assign key = cat | downcase -%}{%- assign tag = site.data.tags[key] -%}
           <span style="background:var(--{{ tag.color | default: 'p7' }})" title="{{ tag.label | default: cat }}"></span>

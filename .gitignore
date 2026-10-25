@@ -8,3 +8,7 @@ vendor/
 *.zip
 *.tex
 Mehul_Desai_Resume.pdf
+
+# Private drafts: never committed. Move a file to _posts/ or _poems/ to publish it.
+_drafts/
+_poem_drafts/
