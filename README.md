@@ -98,6 +98,7 @@ Reading time and word count are calculated automatically, and the first paragrap
 | `featured: true` | Shows the post under **Selected reflections** on the home page |
 | `place: Gandhinagar` | Shows "Written in Gandhinagar" in the post's details bar |
 | `series: How people learn` | Shows a series name in the details bar |
+| `coauthor: Sreejit Purushottaman` | Shows "Written with" in the details bar |
 | `updated: 2026-11-10` | Shows an "Updated" date in the details bar |
 | `lang: gu` and `lang_ref: some-name` | Gujarati version of a post (see below) |
 

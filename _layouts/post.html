@@ -34,6 +34,7 @@ section: reflections
       <div><dt>Published</dt><dd>{{ page.date | date: "%B %-d, %Y" }}</dd></div>
       {% if page.updated %}<div><dt>Updated</dt><dd>{{ page.updated | date: "%b %-d, %Y" }}</dd></div>{% endif %}
       <div><dt>Reading</dt><dd>{% include reading-time.html content=content %} min · {{ words }} words</dd></div>
+      {% if page.coauthor %}<div><dt>Written with</dt><dd>{{ page.coauthor }}</dd></div>{% endif %}
       {% if page.place %}<div><dt>Written in</dt><dd>{{ page.place }}</dd></div>{% endif %}
       {% if page.series %}<div><dt>Series</dt><dd>{{ page.series }}</dd></div>{% endif %}
     </dl>

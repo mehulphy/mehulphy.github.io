@@ -423,6 +423,8 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .prose figure { margin: 2em 0; }
 .prose figcaption { margin-top: 10px; font-size: 14.5px; line-height: 1.55; font-style: italic; color: var(--muted); }
 .prose figcaption a { color: var(--muted); }
+.prose figure.narrow img { max-width: min(100%, 420px); margin: 0 auto; }
+.prose figure.narrow figcaption { text-align: center; }
 .prose table { width: 100%; border-collapse: collapse; font-size: 17px; }
 .prose th, .prose td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); }
 .prose sup, .prose .footnote { font-family: var(--mono); font-size: 11px; color: var(--link); text-decoration: none; }

@@ -17,3 +17,7 @@ _poem_drafts/
 Photos-*/
 *.HEIC
 *.heic
+*.pdf
+
+# Private originals kept off git and the site
+_private/
