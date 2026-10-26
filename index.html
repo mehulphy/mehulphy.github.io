@@ -4,7 +4,8 @@ section: home
 redirect_from:
   - /blog/
 ---
-{%- assign posts = site.posts | where_exp: "p", "p.lang != 'gu'" -%}
+{%- comment -%} Only published posts: drafts never appear here, even when previewing with --drafts. {%- endcomment -%}
+{%- assign posts = site.posts | where_exp: "p", "p.lang != 'gu'" | where_exp: "p", "p.path contains '_posts/'" -%}
 {%- assign latest = posts | first -%}
 {%- assign selected_posts = posts | where: "featured", true | where_exp: "p", "p.url != latest.url" -%}
 {%- assign selected_poems = site.poems | where: "featured", true | sort: "order" -%}
