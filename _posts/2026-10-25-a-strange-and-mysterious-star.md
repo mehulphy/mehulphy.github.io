@@ -8,7 +8,7 @@ In the Diwali vacation of 2004, during the final year of my MSc, I spent a few w
 
 For a student who had only read about astronomy in books, simply walking through those corridors was exciting. But the moment I remember most is a conversation with Professor D. P. K. Banerjee.
 
-## A star that would not behave
+## A star that did not follow the rules
 
 Professor Banerjee told us about a star that he and his colleagues had been studying since it suddenly erupted in early 2002. It sat in the constellation of Monoceros, the Unicorn, and carried the name **V838 Monocerotis**, or V838 Mon for short.
 
